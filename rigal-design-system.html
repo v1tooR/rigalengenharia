@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design System Rigal Engenharia</title>
+    <link rel="stylesheet" href="rigal-tokens.css" />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      .page-header {
+        position: sticky;
+        z-index: 5;
+        top: 0;
+        border-bottom: 1px solid rgba(215, 222, 231, 0.8);
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(16px);
+      }
+
+      .page-header__inner {
+        display: flex;
+        min-height: 72px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--rg-blue-800);
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 4px;
+      }
+
+      .brand strong {
+        font-family: var(--rg-font-display);
+        font-size: 0.88rem;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+
+      .page-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: var(--rg-steel);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .page-nav a {
+        text-decoration: none;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 680px;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        color: var(--rg-white);
+        background: var(--rg-blue-950);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(6, 26, 49, 0.94), rgba(6, 26, 49, 0.72) 48%, rgba(6, 26, 49, 0.18)),
+          url("Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.56.jpeg") center / cover;
+        filter: saturate(0.9) contrast(1.04);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(90deg, #000, transparent 72%);
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 1;
+        padding-block: 128px 72px;
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 32px;
+      }
+
+      .proof-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: 58px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .proof-row div {
+        min-height: 96px;
+        padding: 22px;
+        background: rgba(6, 26, 49, 0.62);
+      }
+
+      .proof-row span {
+        display: block;
+        color: var(--rg-gold-300);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .proof-row strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 0.7fr);
+        gap: clamp(2rem, 6vw, 5rem);
+        align-items: end;
+        margin-bottom: clamp(2rem, 5vw, 4rem);
+      }
+
+      .section-head .rg-lead {
+        margin: 0;
+      }
+
+      .palette {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .swatch {
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid var(--rg-line);
+        border-radius: var(--rg-radius-md);
+        overflow: hidden;
+        background: var(--rg-white);
+      }
+
+      .swatch__color {
+        min-height: 108px;
+      }
+
+      .swatch__meta {
+        padding: 16px;
+      }
+
+      .swatch strong,
+      .swatch span {
+        display: block;
+      }
+
+      .swatch strong {
+        color: var(--rg-blue-800);
+        line-height: 1.25;
+      }
+
+      .swatch span {
+        margin-top: 4px;
+        color: var(--rg-steel);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .type-grid,
+      .component-grid,
+      .case-grid,
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .type-sample {
+        border-top: 1px solid var(--rg-line);
+        padding-top: 22px;
+      }
+
+      .type-sample small {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--rg-gold-700);
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .type-sample p {
+        margin: 0;
+      }
+
+      .case-card {
+        overflow: hidden;
+        border: 1px solid var(--rg-line);
+        border-radius: var(--rg-radius-md);
+        background: var(--rg-white);
+      }
+
+      .case-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .case-card__body {
+        padding: 22px;
+      }
+
+      .case-card h3 {
+        margin: 0 0 10px;
+        color: var(--rg-blue-800);
+        font-size: 1.2rem;
+        line-height: 1.25;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .tag {
+        border: 1px solid rgba(184, 137, 23, 0.42);
+        border-radius: 4px;
+        padding: 5px 8px;
+        color: var(--rg-gold-700);
+        font-size: 0.75rem;
+        font-weight: 800;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .process-step {
+        position: relative;
+        border-top: 2px solid var(--rg-gold-600);
+        padding-top: 22px;
+      }
+
+      .process-step strong {
+        display: block;
+        margin-bottom: 28px;
+        color: var(--rg-gold-300);
+        font-family: var(--rg-font-display);
+        font-size: 2.25rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .process-step h3 {
+        margin: 0 0 10px;
+        font-size: 1.25rem;
+        line-height: 1.25;
+      }
+
+      .process-step p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .form-preview {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 0.65fr);
+        gap: clamp(2rem, 6vw, 5rem);
+        align-items: start;
+      }
+
+      .form-box {
+        display: grid;
+        gap: 18px;
+        border-radius: var(--rg-radius-md);
+        background: var(--rg-white);
+        padding: clamp(1.25rem, 3vw, 2rem);
+        box-shadow: var(--rg-shadow-lift);
+      }
+
+      .composition {
+        display: grid;
+        gap: 16px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .composition li {
+        padding-left: 6px;
+      }
+
+      .composition strong {
+        color: var(--rg-white);
+      }
+
+      @media (max-width: 900px) {
+        .page-nav {
+          display: none;
+        }
+
+        .hero {
+          min-height: 720px;
+        }
+
+        .hero::before {
+          background:
+            linear-gradient(180deg, rgba(6, 26, 49, 0.92), rgba(6, 26, 49, 0.82)),
+            url("Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.56.jpeg") center / cover;
+        }
+
+        .section-head,
+        .form-preview {
+          grid-template-columns: 1fr;
+        }
+
+        .palette,
+        .type-grid,
+        .component-grid,
+        .case-grid,
+        .process-grid,
+        .proof-row {
+          grid-template-columns: 1fr;
+        }
+
+        .hero__actions {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="rg-container page-header__inner">
+        <a class="brand" href="#top" aria-label="Rigal Engenharia">
+          <img src="Logo/logo1.webp" alt="" />
+          <strong>Rigal<br />Engenharia</strong>
+        </a>
+        <nav class="page-nav" aria-label="Navegacao do guia">
+          <a href="#cores">Cores</a>
+          <a href="#tipografia">Tipografia</a>
+          <a href="#componentes">Componentes</a>
+          <a href="#landing">Landing page</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="rg-container hero__content">
+          <p class="rg-kicker">Sistema visual para alto valor</p>
+          <h1 class="rg-h1">Engenharia para obras que exigem confianca.</h1>
+          <p class="rg-lead">
+            Uma identidade institucional, tecnica e premium para apresentar a Rigal como uma parceira de execucao segura para obras publicas,
+            comerciais e particulares.
+          </p>
+          <div class="hero__actions">
+            <a class="rg-btn rg-btn--primary" href="#landing">Ver estrutura da landing</a>
+            <a class="rg-btn rg-btn--secondary" href="#componentes">Ver componentes</a>
+          </div>
+          <div class="proof-row" aria-label="Provas de confianca">
+            <div>
+              <span>Atuacao</span>
+              <strong>Prefeitura de Sao Paulo e Sao Jose dos Campos</strong>
+            </div>
+            <div>
+              <span>Perfil</span>
+              <strong>Obras comerciais, institucionais e residenciais</strong>
+            </div>
+            <div>
+              <span>Valor</span>
+              <strong>Controle tecnico para decisoes de maior investimento</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rg-section" id="cores">
+        <div class="rg-container">
+          <div class="section-head">
+            <div>
+              <p class="rg-kicker">01. Cor</p>
+              <h2 class="rg-h2">Azul como estrutura. Ouro como assinatura.</h2>
+            </div>
+            <p class="rg-lead">
+              A paleta evita excesso de amarelo e usa o dourado como sinal de criterio, acabamento e autoridade. O azul sustenta a confianca
+              institucional.
+            </p>
+          </div>
+          <div class="palette">
+            <article class="swatch">
+              <div class="swatch__color" style="background: #0e325b"></div>
+              <div class="swatch__meta">
+                <strong>Azul Rigal</strong>
+                <span>#0E325B</span>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color" style="background: #b88917"></div>
+              <div class="swatch__meta">
+                <strong>Ouro Engenharia</strong>
+                <span>#B88917</span>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color" style="background: #f0be43"></div>
+              <div class="swatch__meta">
+                <strong>Dourado Claro</strong>
+                <span>#F0BE43</span>
+              </div>
+            </article>
+            <article class="swatch">
+              <div class="swatch__color" style="background: #eef1f4"></div>
+              <div class="swatch__meta">
+                <strong>Concreto</strong>
+                <span>#EEF1F4</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rg-section rg-section--concrete" id="tipografia">
+        <div class="rg-container">
+          <div class="section-head">
+            <div>
+              <p class="rg-kicker">02. Tipografia</p>
+              <h2 class="rg-h2">Michroma marca presenca. Manrope sustenta leitura.</h2>
+            </div>
+            <p class="rg-lead">
+              A combinacao cria uma linguagem tecnica sem sacrificar clareza. Michroma deve aparecer nos grandes momentos; Manrope carrega
+              explicacoes, formularios e detalhes.
+            </p>
+          </div>
+          <div class="type-grid">
+            <div class="type-sample">
+              <small>Hero H1</small>
+              <p class="rg-h1" style="color: var(--rg-blue-800); font-size: clamp(2rem, 4vw, 3.5rem)">Obra conduzida com rigor.</p>
+            </div>
+            <div class="type-sample">
+              <small>Texto</small>
+              <p style="font-size: 1.1rem">
+                Planejamento, acompanhamento tecnico e execucao com comunicacao clara para reduzir incertezas em cada etapa.
+              </p>
+            </div>
+            <div class="type-sample">
+              <small>Metrica</small>
+              <p class="rg-display" style="color: var(--rg-gold-700); font-size: 3rem; line-height: 1">05</p>
+              <p style="margin-top: 12px">etapas de conducao tecnica</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rg-section" id="componentes">
+        <div class="rg-container">
+          <div class="section-head">
+            <div>
+              <p class="rg-kicker">03. Componentes</p>
+              <h2 class="rg-h2">Elementos sobrios para uma venda consultiva.</h2>
+            </div>
+            <p class="rg-lead">
+              Os componentes foram pensados para uma landing page de decisao racional: pouco ruido, bastante prova e CTAs com beneficio claro.
+            </p>
+          </div>
+          <div class="component-grid">
+            <article class="rg-card">
+              <span class="rg-card__icon">01</span>
+              <h3>Avaliacao tecnica</h3>
+              <p>Primeiro contato para entender objetivo, tipo de obra, cidade, estagio atual e principais riscos percebidos.</p>
+            </article>
+            <article class="rg-card">
+              <span class="rg-card__icon">02</span>
+              <h3>Planejamento</h3>
+              <p>Organizacao do escopo com criterio para que proposta, prazo e execucao fiquem mais claros antes da obra avancar.</p>
+            </article>
+            <article class="rg-card">
+              <span class="rg-card__icon">03</span>
+              <h3>Execucao</h3>
+              <p>Acompanhamento de obra com responsabilidade tecnica, comunicacao objetiva e foco em acabamento consistente.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rg-section rg-section--blue">
+        <div class="rg-container">
+          <div class="section-head">
+            <div>
+              <p class="rg-kicker">04. Cases</p>
+              <h2 class="rg-h2">Fotos reais como principal prova visual.</h2>
+            </div>
+            <p class="rg-lead">
+              O portfolio deve mostrar execucao, contexto e resultado. As imagens precisam parecer documentais e confiaveis, nao decorativas.
+            </p>
+          </div>
+          <div class="case-grid">
+            <article class="case-card">
+              <img src="Case - FACHADA CONTE SEGUROS/WhatsApp Image 2026-01-23 at 10.12.14.jpeg" alt="" />
+              <div class="case-card__body">
+                <div class="tags">
+                  <span class="tag">Fachada</span>
+                  <span class="tag">Comercial</span>
+                </div>
+                <h3>Conte Seguros</h3>
+                <p>Case ideal para mostrar antes, durante e depois com foco em valorizacao do ponto comercial.</p>
+              </div>
+            </article>
+            <article class="case-card">
+              <img src="Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.57.jpeg" alt="" />
+              <div class="case-card__body">
+                <div class="tags">
+                  <span class="tag">Interiores</span>
+                  <span class="tag">Entrega</span>
+                </div>
+                <h3>Belle e Bruno</h3>
+                <p>Bom material para comunicar acabamento, detalhe e evolucao de ambiente.</p>
+              </div>
+            </article>
+            <article class="case-card">
+              <img src="Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.14.jpeg" alt="" />
+              <div class="case-card__body">
+                <div class="tags">
+                  <span class="tag">Comercial</span>
+                  <span class="tag">Adequacao</span>
+                </div>
+                <h3>Ideal Lentes</h3>
+                <p>Aplicacao forte para empresas que precisam adaptar espacos sem perder funcionalidade.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rg-section rg-section--blue" id="landing" style="background: var(--rg-blue-900)">
+        <div class="rg-container">
+          <div class="section-head">
+            <div>
+              <p class="rg-kicker">05. Landing page</p>
+              <h2 class="rg-h2">Estrutura recomendada para converter com confianca.</h2>
+            </div>
+            <ul class="composition">
+              <li><strong>Hero:</strong> promessa tecnica, prova institucional e CTA.</li>
+              <li><strong>Metodo:</strong> etapas claras para reduzir incerteza.</li>
+              <li><strong>Cases:</strong> fotos reais com contexto de obra.</li>
+              <li><strong>Contato:</strong> formulario curto para avaliacao inicial.</li>
+            </ul>
+          </div>
+          <div class="process-grid">
+            <article class="process-step">
+              <strong>01</strong>
+              <h3>Avaliacao inicial</h3>
+              <p>Entendimento do objetivo, urgencia, local e momento da obra.</p>
+            </article>
+            <article class="process-step">
+              <strong>02</strong>
+              <h3>Escopo tecnico</h3>
+              <p>Organizacao do que precisa ser feito, com criterio e clareza.</p>
+            </article>
+            <article class="process-step">
+              <strong>03</strong>
+              <h3>Execucao conduzida</h3>
+              <p>Acompanhamento, comunicacao e fechamento com responsabilidade.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rg-section">
+        <div class="rg-container form-preview">
+          <div>
+            <p class="rg-kicker">06. CTA final</p>
+            <h2 class="rg-h2">Formulario simples, tom consultivo e baixa friccao.</h2>
+            <p class="rg-lead">
+              O pedido de contato deve soar como o inicio de uma avaliacao tecnica, nao como uma venda apressada. Isso combina melhor com ticket
+              alto.
+            </p>
+          </div>
+          <form class="form-box">
+            <div class="rg-field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" placeholder="Seu nome" />
+            </div>
+            <div class="rg-field">
+              <label for="tipo">Tipo de obra</label>
+              <select id="tipo" name="tipo">
+                <option>Reforma comercial</option>
+                <option>Construcao residencial</option>
+                <option>Fachada ou adequacao</option>
+                <option>Outro escopo</option>
+              </select>
+            </div>
+            <div class="rg-field">
+              <label for="mensagem">Momento atual</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte em que etapa esta a obra"></textarea>
+            </div>
+            <button class="rg-btn rg-btn--primary" type="button">Solicitar avaliacao tecnica</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

@@ -1,0 +1,3862 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ─── Favicon ──────────────────────────────────────────────── -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+<title>Rigal Engenharia — Reforma e Construção em São José dos Campos</title>
+<meta name="description" content="Reforma residencial e comercial com planejamento, rigor técnico e acabamento de alto padrão. Atendemos São José dos Campos e região. Orçamento gratuito.">
+
+<!-- ─── SEO — Rastreamento e indexação ─────────────────────── -->
+<link rel="canonical" href="https://www.rigalengenharia.com.br/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Gracielle Galdino — Rigal Engenharia">
+<meta name="theme-color" content="#061a31">
+
+<!-- ─── SEO — Geo (Local SEO) ───────────────────────────────── -->
+<meta name="geo.region" content="BR-SP">
+<meta name="geo.placename" content="São José dos Campos, SP, Brasil">
+<meta name="geo.position" content="-23.1794;-45.8869">
+<meta name="ICBM" content="-23.1794, -45.8869">
+
+<!-- ─── Open Graph ──────────────────────────────────────────── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rigalengenharia.com.br/">
+<meta property="og:site_name" content="Rigal Engenharia">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Rigal Engenharia — Reforma e Construção em São José dos Campos">
+<meta property="og:description" content="Reforma residencial e comercial com planejamento, rigor técnico e acabamento de alto padrão. Atendemos São José dos Campos e região. Orçamento gratuito.">
+<meta property="og:image" content="https://www.rigalengenharia.com.br/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rigal Engenharia — Reformas e Construções em São José dos Campos">
+
+<!-- ─── Twitter Card ────────────────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rigal Engenharia — Reforma e Construção em São José dos Campos">
+<meta name="twitter:description" content="Reforma residencial e comercial com planejamento, rigor técnico e acabamento de alto padrão. Atendemos São José dos Campos e região.">
+<meta name="twitter:image" content="https://www.rigalengenharia.com.br/og-image.jpg">
+<meta name="twitter:image:alt" content="Rigal Engenharia — Reformas e Construções em São José dos Campos">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --rg-blue-950: #061a31;
+  --rg-blue-900: #0b2748;
+  --rg-blue-800: #0e325b;
+  --rg-blue-700: #164876;
+  --rg-blue-100: #eaf0f7;
+  --rg-gold-700: #8c650e;
+  --rg-gold-600: #b88917;
+  --rg-gold-400: #d6a72d;
+  --rg-gold-300: #f0be43;
+  --rg-gold-100: #fff4d7;
+  --rg-ink: #151a1f;
+  --rg-steel: #52606d;
+  --rg-concrete: #eef1f4;
+  --rg-line: #d7dee7;
+  --rg-white: #ffffff;
+  --rg-font-display: "Michroma", "Arial Narrow", Arial, sans-serif;
+  --rg-font-body: "Manrope", Arial, sans-serif;
+  --rg-container: 76rem;
+  --rg-radius-sm: 0.25rem;
+  --rg-radius-md: 0.375rem;
+  --rg-radius-lg: 0.5rem;
+  --rg-shadow-soft: 0 18px 45px rgba(6,26,49,.12);
+  --rg-shadow-lift: 0 24px 60px rgba(6,26,49,.18);
+  --rg-focus: 0 0 0 3px rgba(240,190,67,.35);
+}
+
+/* ─── PRELOADER ──────────────────────────────────────────── */
+#rg-preloader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--rg-blue-950);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1.75rem;
+  transition: opacity 380ms ease, visibility 380ms ease;
+}
+#rg-preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.pre-logo {
+  width: clamp(120px, 30vw, 200px);
+  color: var(--rg-white);
+  animation: preLogoIn 520ms cubic-bezier(.22,1,.36,1) both;
+}
+.pre-tagline {
+  font-family: var(--rg-font-display);
+  font-size: clamp(.55rem, 2.2vw, .75rem);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--rg-gold-300);
+  opacity: 0;
+  animation: preTagIn 400ms cubic-bezier(.22,1,.36,1) 280ms both;
+}
+.pre-bar-track {
+  width: clamp(140px, 38vw, 240px);
+  height: 2px;
+  background: rgba(255,255,255,.1);
+  border-radius: 99px;
+  overflow: hidden;
+  opacity: 0;
+  animation: preTagIn 300ms ease 420ms both;
+}
+.pre-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--rg-gold-400), var(--rg-gold-300));
+  border-radius: 99px;
+  animation: preBarFill 680ms cubic-bezier(.4,0,.2,1) 480ms both;
+}
+
+@keyframes preLogoIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes preTagIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes preBarFill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+body.pre-lock { overflow: hidden; }
+
+/* ─── RESET / BASE ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  color: var(--rg-ink);
+  background: var(--rg-white);
+  font-family: var(--rg-font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ─── LAYOUT ─────────────────────────────────────────────── */
+.rg-container {
+  width: min(100% - 2rem, var(--rg-container));
+  margin-inline: auto;
+}
+.rg-section { padding-block: clamp(4rem, 9vw, 7.5rem); }
+.rg-section--blue  { color: var(--rg-white); background: var(--rg-blue-950); }
+.rg-section--dark  { color: var(--rg-white); background: var(--rg-blue-900); }
+.rg-section--concrete { background: var(--rg-concrete); }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+.rg-kicker {
+  display: inline-block;
+  margin-bottom: .75rem;
+  color: var(--rg-gold-700);
+  font-size: .8125rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rg-section--blue .rg-kicker,
+.rg-section--dark .rg-kicker { color: var(--rg-gold-300); }
+
+.rg-h1 {
+  font-family: var(--rg-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.8vw, 3.625rem);
+  line-height: 1.08;
+  max-width: 14ch;
+}
+.rg-h2 {
+  font-family: var(--rg-font-display);
+  font-weight: 400;
+  font-size: clamp(1.625rem, 3vw, 2.25rem);
+  line-height: 1.16;
+  color: var(--rg-blue-800);
+  max-width: 22ch;
+}
+.rg-section--blue .rg-h2,
+.rg-section--dark .rg-h2 { color: var(--rg-white); }
+
+.rg-lead {
+  max-width: 42rem;
+  margin-top: 1.25rem;
+  color: var(--rg-steel);
+  font-size: clamp(1.0625rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+}
+.rg-section--blue .rg-lead,
+.rg-section--dark .rg-lead { color: rgba(255,255,255,.82); }
+
+/* ─── BUTTONS ────────────────────────────────────────────── */
+/*
+ * Sistema de botões "Precision Gold"
+ * Gradiente vertical simula ouro escovado real: mais claro no topo (luz),
+ * mais escuro na base (sombra). Sem animações — peso e precisão transmitem premium.
+ */
+.rg-btn {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: .5625rem;
+  padding: .875rem 1.875rem;
+  border-radius: 4px;
+  /* Borda: topo claro (reflexo de luz) + bordas laterais/base com toque de escuridão */
+  border: 1px solid rgba(120,80,8,.25);
+  border-top-color: rgba(255,238,170,.55);
+  font-family: var(--rg-font-body);
+  font-size: .9375rem;
+  font-weight: 700;
+  letter-spacing: .025em;
+  line-height: 1.15;
+  text-decoration: none;
+  cursor: pointer;
+  color: #0d1f38;
+  /* Ouro escovado: claro no topo, saturação plena no meio, sombra quente na base */
+  background: linear-gradient(175deg,
+    #EDD068 0%,
+    #D9A824 38%,
+    #C2911A 72%,
+    #B07E12 100%
+  );
+  /* Reflexo interno sutil no topo — como chaflão em metal */
+  box-shadow:
+    inset 0 1px 0 rgba(255,245,190,.45),
+    0 1px 2px rgba(0,0,0,.18),
+    0 4px 14px rgba(174,128,18,.32);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 200ms cubic-bezier(.22,.68,0,1.2),
+    box-shadow 200ms ease,
+    filter 200ms ease;
+  white-space: nowrap;
+}
+
+/* Micro-reflexo no topo (linha de luz — não animada, sempre presente) */
+.rg-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,250,205,.7) 30%,
+    rgba(255,250,205,.9) 50%,
+    rgba(255,250,205,.7) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Vinheta de profundidade na base */
+.rg-btn::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 35%;
+  background: linear-gradient(0deg, rgba(0,0,0,.12) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.rg-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255,245,190,.45),
+    0 3px 6px rgba(0,0,0,.18),
+    0 8px 24px rgba(174,128,18,.4);
+}
+
+.rg-btn:active {
+  transform: translateY(0);
+  filter: brightness(.97);
+  box-shadow:
+    inset 0 1px 0 rgba(255,245,190,.3),
+    0 1px 3px rgba(0,0,0,.2),
+    0 2px 6px rgba(174,128,18,.25);
+  transition-duration: 80ms;
+}
+
+.rg-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255,245,190,.45),
+    0 0 0 3px rgba(240,190,67,.45),
+    0 4px 14px rgba(174,128,18,.32);
+}
+
+/* ── Variante secundária — outline dourado, fundo translúcido ── */
+.rg-btn--secondary {
+  background: transparent;
+  border: 1.5px solid var(--rg-gold-600);
+  color: var(--rg-blue-800);
+  box-shadow: none;
+  filter: none;
+}
+.rg-btn--secondary::before,
+.rg-btn--secondary::after { display: none; }
+
+.rg-btn--secondary:hover {
+  background: rgba(184,137,23,.07);
+  border-color: var(--rg-gold-400);
+  box-shadow: 0 2px 10px rgba(184,137,23,.18);
+  filter: none;
+}
+.rg-btn--secondary:active {
+  background: rgba(184,137,23,.12);
+  filter: none;
+}
+
+/* No fundo azul/escuro, outline secundário vira versão clara */
+.rg-section--blue .rg-btn--secondary,
+.rg-section--dark .rg-btn--secondary {
+  color: var(--rg-white);
+  border-color: rgba(240,190,67,.55);
+}
+.rg-section--blue .rg-btn--secondary:hover,
+.rg-section--dark .rg-btn--secondary:hover {
+  background: rgba(240,190,67,.1);
+  border-color: var(--rg-gold-300);
+}
+
+/* ── Variante ghost — texto branco, borda sutil para fundos escuros ── */
+.rg-btn--ghost {
+  background: rgba(255,255,255,.06);
+  border: 1.5px solid rgba(255,255,255,.25);
+  color: var(--rg-white);
+  box-shadow: none;
+  filter: none;
+}
+.rg-btn--ghost::before,
+.rg-btn--ghost::after { display: none; }
+
+.rg-btn--ghost:hover {
+  background: rgba(255,255,255,.11);
+  border-color: rgba(255,255,255,.4);
+  box-shadow: none;
+  filter: none;
+}
+
+/* ── Tamanho pequeno (service tags, inline CTAs) ── */
+
+.rg-btn--sm {
+  min-height: 2.5rem;
+  padding: .5rem 1rem;
+  font-size: .875rem;
+  letter-spacing: .015em;
+}
+
+/* Versão maior para CTAs de destaque (seção final) */
+.rg-btn--lg {
+  min-height: 3.625rem;
+  padding: 1.0625rem 2.25rem;
+  font-size: 1rem;
+  letter-spacing: .03em;
+}
+
+.rg-btn-group { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem; }
+
+/* ─── CARDS ──────────────────────────────────────────────── */
+.rg-card {
+  position: relative;
+  min-height: 21rem;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(14,50,91,.12);
+  border-radius: var(--rg-radius-md);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 62%, rgba(234,240,247,.86) 100%);
+  padding: 2rem;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.85) inset,
+    0 14px 34px rgba(6,26,49,.06);
+  transition:
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    transform 260ms cubic-bezier(.22,.68,0,1.12),
+    background 260ms ease;
+}
+.rg-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rg-gold-600), var(--rg-gold-300));
+  transform: scaleX(.18);
+  transform-origin: left center;
+  opacity: .78;
+  transition: transform 320ms var(--ease-expo), opacity 320ms ease;
+}
+.rg-card::after {
+  content: '';
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  top: -4.5rem;
+  right: -4rem;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,190,67,.18), rgba(240,190,67,0) 68%);
+  opacity: 0;
+  transform: scale(.7);
+  transition: opacity 320ms ease, transform 320ms var(--ease-expo);
+}
+.rg-card:hover {
+  border-color: rgba(184,137,23,.34);
+  background:
+    linear-gradient(145deg, #ffffff 0%, #ffffff 56%, rgba(255,244,215,.46) 100%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 24px 56px rgba(6,26,49,.13);
+  transform: translateY(-7px);
+}
+.rg-card:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.rg-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.rg-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.625rem;
+}
+.rg-card__step {
+  color: rgba(14,50,91,.22);
+  font-family: var(--rg-font-display);
+  font-size: .875rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.rg-card__icon {
+  display: inline-grid;
+  width: 3.125rem;
+  height: 3.125rem;
+  place-items: center;
+  border: 1px solid rgba(184,137,23,.32);
+  border-radius: var(--rg-radius-sm);
+  color: var(--rg-blue-800);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,244,215,.72));
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 10px 22px rgba(184,137,23,.11);
+  transition:
+    color 260ms ease,
+    border-color 260ms ease,
+    background 260ms ease,
+    transform 260ms var(--ease-expo),
+    box-shadow 260ms ease;
+}
+.rg-card__icon svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  stroke-width: 1.9;
+  transition: transform 260ms var(--ease-expo);
+}
+.rg-card:hover .rg-card__icon {
+  color: var(--rg-gold-700);
+  border-color: rgba(184,137,23,.48);
+  background:
+    linear-gradient(180deg, rgba(255,249,231,.98), rgba(240,190,67,.22));
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 14px 28px rgba(184,137,23,.2);
+  transform: translateY(-2px);
+}
+.rg-card:hover .rg-card__icon svg { transform: scale(1.08); }
+.rg-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.rg-card h3 {
+  max-width: 17ch;
+  margin-bottom: .875rem;
+  color: var(--rg-blue-800);
+  font-family: var(--rg-font-body);
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.24;
+}
+.rg-card p {
+  color: var(--rg-steel);
+  font-size: .9375rem;
+  line-height: 1.65;
+}
+
+/* ─── GOLD RULE ──────────────────────────────────────────── */
+.rg-gold-rule {
+  width: 3.5rem;
+  height: 2px;
+  background: var(--rg-gold-600);
+  margin-bottom: 1.5rem;
+}
+
+/* ─── NAV ────────────────────────────────────────────────── */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: background 250ms ease, box-shadow 250ms ease, backdrop-filter 250ms ease;
+}
+#nav.scrolled {
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--rg-line);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+  gap: 2rem;
+}
+.nav-logo svg {
+  height: 2.75rem;
+  width: auto;
+  color: var(--rg-white);
+  transition: color 250ms ease;
+}
+#nav.scrolled .nav-logo svg { color: var(--rg-blue-800); }
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+.nav-links a {
+  color: rgba(255,255,255,.85);
+  font-size: .9rem;
+  font-weight: 600;
+  transition: color 160ms;
+}
+.nav-links a:hover { color: var(--rg-gold-300); }
+#nav.scrolled .nav-links a { color: var(--rg-steel); }
+#nav.scrolled .nav-links a:hover { color: var(--rg-blue-800); }
+
+.nav-cta { display: flex; align-items: center; gap: 1rem; }
+.nav-cta .rg-btn { min-height: 2.5rem; padding: .5rem 1.125rem; font-size: .875rem; }
+/* Nav button herda o gradiente padrão — sem override de cor */
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: .5rem;
+  background: none;
+  border: none;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--rg-white);
+  border-radius: 2px;
+  transition: background 250ms;
+}
+#nav.scrolled .nav-burger span { background: var(--rg-blue-800); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--rg-blue-950);
+  padding: 1rem 1.5rem 1.5rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  color: rgba(255,255,255,.85);
+  font-weight: 600;
+  padding: .75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: color 160ms;
+}
+.nav-mobile a:hover { color: var(--rg-gold-300); }
+.nav-mobile .rg-btn { width: 100%; margin-top: 1rem; justify-content: center; }
+
+/* ─── HERO ───────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--rg-blue-950);
+  z-index: 0;
+}
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: .28;
+  transition: opacity 600ms ease;
+}
+.hero-bg-img.loaded { opacity: .28; }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg,
+    rgba(6,26,49,.97) 0%,
+    rgba(6,26,49,.93) 42%,
+    rgba(6,26,49,.78) 62%,
+    rgba(6,26,49,.62) 78%,
+    rgba(6,26,49,.48) 100%
+  );
+  z-index: 1;
+}
+
+/* Linha dourada decorativa no canto inferior esquerdo */
+.hero-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rg-gold-600) 0%, transparent 100%);
+  z-index: 2;
+}
+
+/* Grid duas colunas: texto | retrato */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+}
+
+.hero-text {
+  padding-top: clamp(7rem, 14vw, 10rem);
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+  padding-right: clamp(1.5rem, 3.5vw, 3rem);
+  max-width: 580px;
+}
+
+.hero-content .rg-kicker { color: var(--rg-gold-300); }
+.hero-content .rg-h1 { color: var(--rg-white); }
+.hero-content .rg-lead { color: rgba(255,255,255,.82); }
+
+/* ─── HERO PORTRAIT ──────────────────────────────────────── */
+.hero-portrait {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Glow ambiental dourado atrás do arco */
+.hero-portrait-glow {
+  position: absolute;
+  bottom: -4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse 70% 55% at 50% 85%,
+    rgba(184,137,23,.28) 0%,
+    rgba(184,137,23,.1) 55%,
+    transparent 75%
+  );
+  filter: blur(44px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Halo atrás da cabeça */
+.hero-portrait-halo {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 30%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240,190,67,.16) 0%,
+    transparent 65%
+  );
+  filter: blur(28px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Frame em arco — recorta a foto em shape premium */
+.hero-portrait-frame {
+  position: relative;
+  z-index: 1;
+  width: clamp(260px, 30vw, 420px);
+  max-height: clamp(480px, 72vh, 700px);
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+  background: var(--rg-blue-900);
+  /* Anel dourado: sombra interna + externa simulam moldura de metal */
+  box-shadow:
+    0 0 0 1px rgba(240,190,67,.45),
+    0 0 0 5px rgba(6,26,49,1),
+    0 0 0 6px rgba(240,190,67,.22),
+    0 48px 120px rgba(0,0,0,.6),
+    0 0 80px rgba(184,137,23,.18);
+}
+
+.hero-portrait-img {
+  display: block;
+  width: 100%;
+  height: clamp(480px, 72vh, 700px);
+  object-fit: cover;
+  object-position: top center;
+  position: relative;
+  z-index: 1;
+  /* Vinheta radial: apaga fundo branco nas bordas, preserva a pessoa no centro */
+  -webkit-mask-image: radial-gradient(
+    ellipse 92% 96% at 50% 36%,
+    black 22%,
+    rgba(0,0,0,.94) 44%,
+    rgba(0,0,0,.72) 62%,
+    rgba(0,0,0,.28) 80%,
+    transparent 94%
+  );
+  mask-image: radial-gradient(
+    ellipse 92% 96% at 50% 36%,
+    black 22%,
+    rgba(0,0,0,.94) 44%,
+    rgba(0,0,0,.72) 62%,
+    rgba(0,0,0,.28) 80%,
+    transparent 94%
+  );
+}
+
+/* ─── FLOATING BADGES ─────────────────────────────────────── */
+.hero-fbadge {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .625rem .875rem;
+  background: rgba(6,26,49,.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(240,190,67,.28);
+  border-radius: 10px;
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.07);
+  white-space: nowrap;
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+.hero-fbadge-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(240,190,67,.22), rgba(184,137,23,.12));
+  border: 1px solid rgba(240,190,67,.3);
+  color: var(--rg-gold-300);
+}
+.hero-fbadge-icon svg { width: .9375rem; height: .9375rem; }
+
+.hero-fbadge-num {
+  display: block;
+  font-family: var(--rg-font-display);
+  font-size: 1rem;
+  color: var(--rg-white);
+  line-height: 1.1;
+}
+.hero-fbadge-label {
+  display: block;
+  font-size: .6875rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.52);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+/* Posições de cada badge */
+.hero-fbadge--years {
+  left: -1.25rem;
+  top: 28%;
+  animation-delay: 0s;
+  animation-duration: 4s;
+}
+.hero-fbadge--obras {
+  right: -1rem;
+  top: 20%;
+  animation-delay: 1.2s;
+  animation-duration: 3.6s;
+}
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* Badges entram com fade — transform reservado para a animação de flutuação */
+.hero-fbadge {
+  opacity: 0;
+  transition: opacity 600ms var(--ease-expo);
+}
+.hero-fbadge.badge-in {
+  opacity: 1;
+  animation: badge-float var(--badge-dur, 4s) ease-in-out infinite var(--badge-delay, 0s);
+}
+
+.hero-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .625rem;
+  margin-top: 1.5rem;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .375rem .875rem;
+  border: 1px solid rgba(240,190,67,.4);
+  border-radius: var(--rg-radius-sm);
+  color: var(--rg-gold-300);
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.hero-tag svg { flex-shrink: 0; }
+
+.hero-microcopy {
+  margin-top: .75rem;
+  color: rgba(255,255,255,.55);
+  font-size: .8125rem;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: rgba(255,255,255,.4);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ─── TRUST MARQUEE ──────────────────────────────────────── */
+#trust-bar {
+  background: var(--rg-blue-900);
+  border-top: 1px solid rgba(255,255,255,.055);
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  overflow: hidden;
+  position: relative;
+  padding-block: 0;
+}
+#trust-bar::before,
+#trust-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+#trust-bar::before { left: 0; background: linear-gradient(90deg, var(--rg-blue-900) 0%, transparent 100%); }
+#trust-bar::after  { right: 0; background: linear-gradient(270deg, var(--rg-blue-900) 0%, transparent 100%); }
+.trust-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: tb-marquee 26s linear infinite;
+}
+.trust-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .trust-track { animation: none; }
+}
+@keyframes tb-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .8rem 1rem;
+  color: rgba(255,255,255,.72);
+  font-family: var(--rg-font-display);
+  font-size: .6rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 160ms ease;
+  cursor: default;
+}
+.trust-item:hover { color: var(--rg-gold-300); }
+.trust-item svg {
+  width: .8125rem;
+  height: .8125rem;
+  color: var(--rg-gold-400);
+  flex-shrink: 0;
+  transition: color 160ms ease;
+}
+.trust-item:hover svg { color: var(--rg-gold-300); }
+.trust-sep {
+  color: rgba(240,190,67,.28);
+  font-size: .375rem;
+  line-height: 1;
+  user-select: none;
+  flex-shrink: 0;
+  padding-inline: .125rem;
+}
+
+/* ─── DIFERENCIAIS ───────────────────────────────────────── */
+.diff-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 3rem;
+}
+
+/* ─── SERVIÇOS ───────────────────────────────────────────── */
+.services-layout {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: stretch;
+}
+.service-card-featured,
+.service-card-sm {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  border: 1px solid rgba(14,50,91,.12);
+  border-radius: var(--rg-radius-md);
+  background: var(--rg-white);
+  box-shadow: 0 16px 36px rgba(6,26,49,.07);
+  transition:
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    transform 260ms cubic-bezier(.22,.68,0,1.12);
+}
+.service-card-featured::before,
+.service-card-sm::before {
+  display: none;
+}
+.service-card-sm::before {
+  display: none;
+}
+.service-card-featured::after,
+.service-card-sm::after {
+  display: none;
+}
+.service-card-featured:hover,
+.service-card-sm:hover {
+  border-color: rgba(184,137,23,.34);
+  box-shadow: 0 28px 64px rgba(6,26,49,.14);
+  transform: translateY(-6px);
+}
+.service-card-featured:hover::before,
+.service-card-sm:hover::before {
+  display: none;
+}
+.service-card-featured:hover::after,
+.service-card-sm:hover::after {
+  display: none;
+}
+@media (hover: none) {
+  .service-card-featured::after,
+  .service-card-sm::after { display: none; }
+}
+.service-card-featured {
+  grid-column: 1 / -1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(22rem, .92fr);
+}
+.service-card-sm {
+  grid-column: span 6;
+  min-height: 0;
+}
+
+.service-featured-img {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  min-height: 100%;
+  background: var(--rg-concrete);
+}
+.service-sm-img {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--rg-concrete);
+}
+.service-featured-img::after,
+.service-sm-img::after {
+  display: none;
+}
+.service-featured-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 19.6rem;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 520ms var(--ease-expo), filter 520ms ease;
+}
+.service-sm-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 520ms var(--ease-expo), filter 520ms ease;
+}
+.service-card-featured:hover .service-featured-img img,
+.service-card-sm:hover .service-sm-img img {
+  filter: saturate(1.06) contrast(1.03);
+  transform: scale(1.055);
+}
+.service-featured-body,
+.service-sm-body {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  padding: clamp(1.5rem, 2.8vw, 2.25rem);
+}
+.service-card-featured .service-featured-body {
+  justify-content: center;
+  max-width: none;
+}
+.service-card-sm .service-sm-body {
+  max-width: none;
+}
+.service-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: .875rem;
+  margin-bottom: .75rem;
+}
+.service-icon {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(240,190,67,.52);
+  border-radius: var(--rg-radius-sm);
+  color: var(--rg-blue-800);
+  background: rgba(240,190,67,.16);
+  box-shadow: 0 12px 26px rgba(6,26,49,.08);
+}
+.service-icon svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  stroke-width: 1.9;
+}
+.service-eyebrow {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--rg-gold-700);
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .07em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+.service-featured-body h3,
+.service-sm-body h3 {
+  color: var(--rg-blue-800);
+  font-family: var(--rg-font-body);
+  font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+.service-card-sm h3 {
+  max-width: 18ch;
+  font-size: clamp(1.25rem, 1.55vw, 1.5rem);
+}
+.service-featured-body p,
+.service-sm-body p {
+  max-width: 42rem;
+  color: var(--rg-steel);
+  font-size: .9125rem;
+  line-height: 1.58;
+}
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1rem 0 1.125rem;
+}
+.service-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: .3125rem .5625rem;
+  border: 1px solid rgba(14,50,91,.12);
+  border-radius: var(--rg-radius-sm);
+  color: var(--rg-blue-800);
+  background: rgba(234,240,247,.72);
+  box-shadow: none;
+  font-size: .75rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+  margin-top: 0;
+}
+.service-actions .rg-btn {
+  min-height: 2.875rem;
+  padding: .75rem 1rem;
+  font-size: .875rem;
+}
+.service-note {
+  color: var(--rg-steel);
+  font-size: .8125rem;
+  font-weight: 700;
+}
+.services-side {
+  display: contents;
+}
+.service-card-sm .service-sm-body p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.service-card-featured .rg-btn--secondary,
+.service-card-sm .rg-btn--secondary {
+  color: var(--rg-blue-800);
+  border-color: rgba(184,137,23,.58);
+  background: transparent;
+}
+.service-card-featured .rg-btn--secondary:hover,
+.service-card-sm .rg-btn--secondary:hover {
+  color: var(--rg-blue-800);
+  border-color: var(--rg-gold-300);
+  background: rgba(184,137,23,.07);
+}
+.services-secondary {
+  margin-top: 1.25rem;
+  border: 1px solid rgba(14,50,91,.12);
+  border-radius: var(--rg-radius-md);
+  overflow: hidden;
+  background: var(--rg-white);
+  box-shadow: 0 16px 36px rgba(6,26,49,.06);
+}
+.services-secondary-header {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(14,50,91,.1);
+  color: var(--rg-blue-800);
+  background: linear-gradient(180deg, rgba(234,240,247,.72), rgba(255,255,255,.92));
+  font-size: .8125rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.services-secondary-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.service-mini {
+  padding: 1.375rem;
+  border-right: 1px solid rgba(14,50,91,.1);
+  background: var(--rg-white);
+}
+.service-mini:last-child { border-right: none; }
+.service-mini h4 {
+  color: var(--rg-blue-800);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+.service-mini p {
+  color: var(--rg-steel);
+  font-size: .875rem;
+  line-height: 1.62;
+  margin-bottom: 1rem;
+}
+
+/* ─── FUNDADORA ──────────────────────────────────────────── */
+.founder-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+.founder-img-wrap {
+  position: relative;
+}
+.founder-img-main {
+  border-radius: var(--rg-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+.founder-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.founder-accent {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 45%;
+  aspect-ratio: 1;
+  border-radius: var(--rg-radius-lg);
+  overflow: hidden;
+  border: 4px solid var(--rg-white);
+  box-shadow: var(--rg-shadow-lift);
+}
+.founder-accent img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.founder-credential {
+  position: absolute;
+  top: 1.5rem;
+  left: -1.5rem;
+  padding: .875rem 1.25rem;
+  background: var(--rg-gold-300);
+  border-radius: var(--rg-radius-md);
+  box-shadow: var(--rg-shadow-soft);
+  text-align: center;
+}
+.founder-credential strong {
+  display: block;
+  font-family: var(--rg-font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--rg-blue-950);
+  line-height: 1;
+}
+.founder-credential span {
+  font-size: .7rem;
+  font-weight: 800;
+  color: var(--rg-blue-800);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.founder-body .rg-h2 { margin-top: .5rem; }
+.founder-quote {
+  margin: 2rem 0;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  border-left: 3px solid var(--rg-gold-600);
+  background: var(--rg-gold-100);
+  border-radius: 0 var(--rg-radius-md) var(--rg-radius-md) 0;
+}
+.founder-quote p {
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: var(--rg-blue-800);
+  line-height: 1.65;
+  margin-bottom: .75rem;
+}
+.founder-quote cite {
+  font-size: .8125rem;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--rg-gold-700);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* ─── PROCESSO v2 ─────────────────────────────────────────── */
+.proc-wrap {
+  position: relative;
+  margin-top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.proc-wrap::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 1.75rem;
+  bottom: 1.75rem;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg,
+    transparent,
+    rgba(240,190,67,.38) 6%,
+    rgba(240,190,67,.38) 94%,
+    transparent
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.proc-row {
+  display: grid;
+  grid-template-columns: 1fr 5.25rem 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.proc-spacer { display: block; }
+.proc-node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.proc-node-ring {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--rg-font-display);
+  font-size: .875rem;
+  color: var(--rg-gold-300);
+  background: var(--rg-blue-950);
+  border: 1.5px solid rgba(240,190,67,.5);
+  box-shadow:
+    0 0 0 5px var(--rg-blue-950),
+    0 0 0 6px rgba(240,190,67,.2),
+    0 0 28px rgba(240,190,67,.18);
+  transition: border-color 280ms ease, box-shadow 280ms ease;
+  flex-shrink: 0;
+}
+.proc-row:hover .proc-node-ring {
+  border-color: rgba(240,190,67,.82);
+  box-shadow:
+    0 0 0 5px var(--rg-blue-950),
+    0 0 0 6px rgba(240,190,67,.38),
+    0 0 40px rgba(240,190,67,.28);
+}
+.proc-card {
+  padding: 1.875rem 2rem;
+  background: linear-gradient(145deg, rgba(255,255,255,.075) 0%, rgba(255,255,255,.025) 100%);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 280ms var(--ease-expo), border-color 280ms ease, box-shadow 280ms ease;
+}
+.proc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 14px 14px 0 0;
+}
+.proc-row--left .proc-card::before {
+  background: linear-gradient(90deg, transparent 0%, var(--rg-gold-400) 55%, var(--rg-gold-300) 100%);
+}
+.proc-row--right .proc-card::before {
+  background: linear-gradient(90deg, var(--rg-gold-300) 0%, var(--rg-gold-400) 45%, transparent 100%);
+}
+.proc-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240,190,67,.26);
+  box-shadow: 0 28px 60px rgba(0,0,0,.36);
+}
+.proc-card-ghost {
+  position: absolute;
+  bottom: -.5rem;
+  font-family: var(--rg-font-display);
+  font-size: 7.5rem;
+  line-height: 1;
+  color: rgba(240,190,67,.055);
+  pointer-events: none;
+  letter-spacing: -.02em;
+  user-select: none;
+}
+.proc-row--left  .proc-card-ghost { right: .5rem; }
+.proc-row--right .proc-card-ghost { left: .5rem; }
+.proc-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rg-gold-400);
+  margin-bottom: .625rem;
+}
+.proc-card h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--rg-white);
+  margin-bottom: .75rem;
+  line-height: 1.3;
+}
+.proc-card p {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.72);
+}
+.proc-checks {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  flex-direction: column;
+  gap: .375rem;
+}
+.proc-check {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  color: rgba(255,255,255,.6);
+}
+.proc-check svg {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  color: var(--rg-gold-400);
+  stroke-width: 2.5;
+}
+
+/* ─── PORTFOLIO ──────────────────────────────────────────── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.portfolio-card {
+  border-radius: var(--rg-radius-md);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+.portfolio-card:hover img { transform: scale(1.06); }
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6,26,49,.9) 0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.portfolio-card:hover .portfolio-card-overlay { opacity: 1; }
+.portfolio-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1.25rem .875rem;
+  background: linear-gradient(to top, rgba(6,26,49,.95) 60%, transparent 100%);
+}
+.portfolio-case-name {
+  color: var(--rg-white);
+  font-weight: 700;
+  font-size: .9375rem;
+  margin-bottom: .375rem;
+}
+.portfolio-tags { display: flex; flex-wrap: wrap; gap: .375rem; }
+.portfolio-tag {
+  padding: .2rem .625rem;
+  border: 1px solid rgba(240,190,67,.55);
+  border-radius: 2px;
+  color: var(--rg-gold-300);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.portfolio-cta { text-align: center; margin-top: 2.5rem; }
+
+/* ─── PORTFOLIO CARD — expand hint ───────────────────────── */
+.portfolio-card-expand {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6,26,49,.38);
+  opacity: 0;
+  transition: opacity 240ms ease;
+  z-index: 3;
+  pointer-events: none;
+}
+.portfolio-card:hover .portfolio-card-expand { opacity: 1; }
+.portfolio-card-expand svg {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: rgba(255,255,255,.92);
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,.55));
+}
+
+/* ─── PORTFOLIO MODAL ─────────────────────────────────────── */
+.pmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+}
+.pmodal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.pmodal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6,26,49,.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.pmodal-box {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1100px);
+  height: min(90dvh, 780px);
+  display: flex;
+  flex-direction: column;
+  background: var(--rg-blue-900);
+  border: 1px solid rgba(240,190,67,.18);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 48px 140px rgba(0,0,0,.75);
+  transform: scale(.95) translateY(10px);
+  transition: transform 300ms var(--ease-expo);
+}
+.pmodal.open .pmodal-box { transform: scale(1) translateY(0); }
+
+/* Header */
+.pmodal-header {
+  display: flex;
+  align-items: center;
+  gap: .875rem;
+  padding: .875rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  flex-shrink: 0;
+}
+.pmodal-title {
+  font-family: var(--rg-font-display);
+  font-size: .9375rem;
+  color: var(--rg-white);
+  font-weight: 400;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pmodal-htags {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+.pmodal-htag {
+  padding: .18rem .55rem;
+  border: 1px solid rgba(240,190,67,.42);
+  border-radius: 2px;
+  color: var(--rg-gold-300);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.pmodal-counter {
+  font-family: var(--rg-font-display);
+  font-size: .78rem;
+  color: rgba(255,255,255,.42);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pmodal-close {
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.65);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+  flex-shrink: 0;
+}
+.pmodal-close:hover {
+  background: rgba(240,190,67,.15);
+  border-color: rgba(240,190,67,.5);
+  color: var(--rg-gold-300);
+}
+.pmodal-close svg { width: .9375rem; height: .9375rem; }
+
+/* Stage */
+.pmodal-stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(4,14,26,.6);
+  min-height: 0;
+}
+.pmodal-img-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 4rem;
+  position: relative;
+}
+/* before/after badge on main image */
+.pmodal-phase-badge {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .3rem .875rem;
+  border-radius: 999px;
+  font-family: var(--rg-font-display);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.pmodal-phase-badge.badge--antes {
+  background: rgba(220, 80, 60, .85);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.pmodal-phase-badge.badge--depois {
+  background: rgba(40, 160, 90, .85);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.pmodal-phase-badge.badge--visible { opacity: 1; }
+/* thumb phase dot */
+.pthumb-dot {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,.4);
+}
+.pthumb-dot--antes { background: #e8503a; }
+.pthumb-dot--depois { background: #28a05a; }
+.pmodal-main-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.pmodal-main-img.img-loaded { opacity: 1; }
+
+/* Arrows */
+.pmodal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.875rem;
+  height: 2.875rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(6,26,49,.7);
+  backdrop-filter: blur(8px);
+  color: rgba(255,255,255,.85);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+  z-index: 2;
+}
+.pmodal-arrow:hover {
+  background: rgba(240,190,67,.2);
+  border-color: rgba(240,190,67,.5);
+  transform: translateY(-50%) scale(1.07);
+}
+.pmodal-arrow--prev { left: .625rem; }
+.pmodal-arrow--next { right: .625rem; }
+.pmodal-arrow svg { width: 1.125rem; height: 1.125rem; }
+.pmodal-arrow:disabled { opacity: .25; pointer-events: none; }
+
+/* Thumbnails */
+.pmodal-thumbs {
+  flex-shrink: 0;
+  display: flex;
+  gap: .5rem;
+  padding: .75rem 1rem;
+  overflow-x: auto;
+  border-top: 1px solid rgba(255,255,255,.08);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(240,190,67,.28) transparent;
+}
+.pmodal-thumbs::-webkit-scrollbar { height: 3px; }
+.pmodal-thumbs::-webkit-scrollbar-thumb { background: rgba(240,190,67,.28); border-radius: 4px; }
+.pmodal-thumb {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 3.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 180ms ease, opacity 180ms ease;
+  opacity: .5;
+}
+.pmodal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.pmodal-thumb:hover { opacity: .82; }
+.pmodal-thumb.pthumb-active {
+  border-color: var(--rg-gold-300);
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .pmodal { padding: 0; }
+  .pmodal-box {
+    height: 100dvh;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+  }
+  .pmodal-header { padding: .75rem .875rem; }
+  .pmodal-title { font-size: .85rem; }
+  .pmodal-htags { display: none; }
+  .pmodal-img-wrap { padding: .75rem 3rem; }
+  .pmodal-arrow { width: 2.375rem; height: 2.375rem; opacity: .7; }
+  .pmodal-arrow--prev { left: .25rem; }
+  .pmodal-arrow--next { right: .25rem; }
+  .pmodal-thumb { width: 3.75rem; height: 2.75rem; }
+}
+
+/* ─── DEPOIMENTOS ────────────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.testimonial-card {
+  border: 1px solid var(--rg-line);
+  border-radius: var(--rg-radius-md);
+  padding: 1.75rem;
+  background: var(--rg-white);
+}
+.testimonial-stars {
+  display: flex;
+  gap: .2rem;
+  margin-bottom: 1rem;
+  color: var(--rg-gold-400);
+}
+.testimonial-card blockquote {
+  color: var(--rg-steel);
+  font-size: .9375rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+.testimonial-author strong {
+  display: block;
+  color: var(--rg-blue-800);
+  font-weight: 700;
+  font-size: .9rem;
+}
+.testimonial-author span { color: var(--rg-steel); font-size: .8125rem; }
+
+/* ─── FAQ ────────────────────────────────────────────────── */
+.faq-list { margin-top: 3rem; max-width: 56rem; margin-inline: auto; }
+.faq-item {
+  border-bottom: 1px solid var(--rg-line);
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.375rem 0;
+  cursor: pointer;
+  color: var(--rg-blue-800);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.4;
+  user-select: none;
+  transition: color 160ms;
+}
+.faq-question:hover { color: var(--rg-gold-700); }
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1.5px solid var(--rg-line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rg-gold-600);
+  transition: transform 250ms ease, border-color 250ms;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--rg-gold-600); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 350ms ease;
+}
+.faq-answer-inner { padding-bottom: 1.375rem; color: var(--rg-steel); line-height: 1.7; }
+
+/* ─── CTA FINAL ──────────────────────────────────────────── */
+#cta-final {
+  background: linear-gradient(135deg, var(--rg-blue-950) 0%, var(--rg-blue-900) 100%);
+  position: relative;
+  overflow: hidden;
+}
+#cta-final::before {
+  content: "";
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,190,67,.06) 0%, transparent 70%);
+}
+.cta-final-inner { text-align: center; position: relative; z-index: 1; }
+.cta-final-inner .rg-h2 { max-width: 100%; color: var(--rg-white); margin-inline: auto; }
+.cta-final-inner .rg-lead { color: rgba(255,255,255,.75); margin-inline: auto; }
+.cta-final-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--rg-blue-950);
+  position: relative;
+  overflow: hidden;
+}
+.ft-accent-bar {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--rg-gold-400) 30%, var(--rg-gold-300) 60%, transparent 100%);
+}
+.ft-ghost {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--rg-font-display);
+  font-size: clamp(7rem, 18vw, 18rem);
+  line-height: 1;
+  color: rgba(240,190,67,.028);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -.025em;
+}
+.ft-body {
+  padding-block: 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1.3fr;
+  gap: 2.5rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+/* col 1 — brand */
+.ft-brand-logo {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+.ft-brand-logo svg { height: 1.75rem; width: auto; color: rgba(255,255,255,.82); }
+.ft-brand-tagline {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 22ch;
+}
+.ft-location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .375rem .875rem;
+  border: 1px solid rgba(240,190,67,.22);
+  border-radius: 999px;
+  font-size: .8125rem;
+  color: rgba(240,190,67,.75);
+  background: rgba(240,190,67,.04);
+}
+.ft-location-badge svg { flex-shrink: 0; color: var(--rg-gold-400); }
+/* cols 2 & 3 — nav & contact */
+.ft-col-label {
+  font-family: var(--rg-font-display);
+  font-size: .6875rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rg-gold-400);
+  margin-bottom: 1.125rem;
+}
+.ft-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+}
+.ft-nav-list a {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.55);
+  transition: color 160ms ease, padding-left 160ms ease;
+  display: inline-block;
+}
+.ft-nav-list a:hover { color: var(--rg-gold-300); padding-left: .375rem; }
+.ft-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .875rem;
+}
+.ft-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .625rem;
+  color: rgba(255,255,255,.6);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+.ft-contact-item svg { flex-shrink: 0; margin-top: .1em; color: var(--rg-gold-400); }
+.ft-contact-item a { color: inherit; transition: color 160ms; }
+.ft-contact-item a:hover { color: var(--rg-gold-300); }
+/* col 4 — CTA */
+.ft-cta-card {
+  background: linear-gradient(145deg, rgba(240,190,67,.1) 0%, rgba(240,190,67,.04) 100%);
+  border: 1px solid rgba(240,190,67,.22);
+  border-radius: 14px;
+  padding: 1.625rem 1.5rem;
+  text-align: center;
+}
+.ft-cta-card-icon {
+  width: 3.25rem; height: 3.25rem;
+  border-radius: 50%;
+  background: rgba(240,190,67,.12);
+  border: 1px solid rgba(240,190,67,.25);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  color: var(--rg-gold-300);
+}
+.ft-cta-card-title {
+  font-family: var(--rg-font-display);
+  font-size: .9375rem;
+  color: var(--rg-white);
+  margin-bottom: .5rem;
+}
+.ft-cta-card-sub {
+  font-size: .8125rem;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+.ft-cta-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: #25D366;
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 600;
+  padding: .75rem 1.25rem;
+  border-radius: 10px;
+  transition: filter 200ms ease, transform 200ms ease;
+  width: 100%;
+}
+.ft-cta-wa:hover { filter: brightness(1.1); transform: translateY(-2px); color: #fff; }
+.ft-cta-wa svg { flex-shrink: 0; }
+.ft-cta-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: .75rem;
+  font-size: .8125rem;
+  color: rgba(255,255,255,.45);
+  transition: color 160ms;
+}
+.ft-cta-phone:hover { color: var(--rg-gold-300); }
+/* bottom bar */
+.ft-bottom {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding-block: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  position: relative;
+  z-index: 1;
+}
+.ft-copy {
+  font-size: .8rem;
+  color: rgba(255,255,255,.3);
+}
+.ft-badges {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.ft-badge {
+  font-size: .75rem;
+  color: rgba(255,255,255,.35);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 4px;
+  padding: .2rem .5rem;
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+:root {
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-back: cubic-bezier(0.34, 1.04, 0.64, 1);
+}
+
+/* ── Fade-up: padrão para a maioria dos elementos ── */
+.rg-fade-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 750ms var(--ease-expo), transform 750ms var(--ease-expo);
+  will-change: opacity, transform;
+}
+.rg-fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Fade-left / right: para layouts de duas colunas ── */
+.rg-fade-left {
+  opacity: 0;
+  transform: translateX(-52px);
+  transition: opacity 820ms var(--ease-expo), transform 820ms var(--ease-expo);
+  will-change: opacity, transform;
+}
+.rg-fade-left.visible { opacity: 1; transform: translateX(0); }
+
+.rg-fade-right {
+  opacity: 0;
+  transform: translateX(52px);
+  transition: opacity 820ms var(--ease-expo), transform 820ms var(--ease-expo);
+  will-change: opacity, transform;
+}
+.rg-fade-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ── Scale-in: para portfolio cards e imagens ── */
+.rg-scale-in {
+  opacity: 0;
+  transform: scale(0.93) translateY(22px);
+  transition: opacity 680ms var(--ease-expo), transform 680ms var(--ease-expo);
+  will-change: opacity, transform;
+}
+.rg-scale-in.visible { opacity: 1; transform: scale(1) translateY(0); }
+
+/* ── Stagger container: filhos revelam em cascata ── */
+.rg-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 680ms var(--ease-expo), transform 680ms var(--ease-expo);
+  will-change: opacity, transform;
+}
+.rg-stagger.visible > *:nth-child(1)  { opacity:1; transform:none; transition-delay:   0ms; }
+.rg-stagger.visible > *:nth-child(2)  { opacity:1; transform:none; transition-delay:  85ms; }
+.rg-stagger.visible > *:nth-child(3)  { opacity:1; transform:none; transition-delay: 170ms; }
+.rg-stagger.visible > *:nth-child(4)  { opacity:1; transform:none; transition-delay: 255ms; }
+.rg-stagger.visible > *:nth-child(5)  { opacity:1; transform:none; transition-delay: 340ms; }
+.rg-stagger.visible > *:nth-child(6)  { opacity:1; transform:none; transition-delay: 425ms; }
+.rg-stagger.visible > *:nth-child(7)  { opacity:1; transform:none; transition-delay: 510ms; }
+.rg-stagger.visible > *:nth-child(8)  { opacity:1; transform:none; transition-delay: 595ms; }
+
+.diff-grid.rg-stagger > .rg-card {
+  filter: blur(5px);
+  transform: translateY(42px) scale(.965);
+  transition:
+    opacity 760ms var(--ease-expo),
+    filter 760ms ease,
+    transform 760ms var(--ease-expo),
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
+}
+.diff-grid.rg-stagger.visible > .rg-card {
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+.diff-grid.rg-stagger.visible > .rg-card:nth-child(1) { transition-delay: 0ms, 0ms, 0ms, 0ms, 0ms, 0ms; }
+.diff-grid.rg-stagger.visible > .rg-card:nth-child(2) { transition-delay: 95ms, 95ms, 95ms, 0ms, 0ms, 0ms; }
+.diff-grid.rg-stagger.visible > .rg-card:nth-child(3) { transition-delay: 190ms, 190ms, 190ms, 0ms, 0ms, 0ms; }
+.diff-grid.rg-stagger.visible > .rg-card:nth-child(4) { transition-delay: 285ms, 285ms, 285ms, 0ms, 0ms, 0ms; }
+@media (hover: hover) {
+  .diff-grid.rg-stagger.visible > .rg-card:hover {
+    transform: translateY(-7px) scale(1.01);
+    transition-delay: 0ms;
+  }
+}
+
+.services-layout.rg-stagger .services-side > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 680ms var(--ease-expo),
+    transform 680ms var(--ease-expo),
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+  will-change: opacity, transform;
+}
+.services-layout.rg-stagger.visible .services-side > * {
+  opacity: 1;
+  transform: none;
+}
+.services-layout.rg-stagger.visible .services-side > *:nth-child(1) { transition-delay: 110ms, 110ms, 0ms, 0ms; }
+.services-layout.rg-stagger.visible .services-side > *:nth-child(2) { transition-delay: 220ms, 220ms, 0ms, 0ms; }
+
+/* ── Delays manuais para sequenciamento custom ── */
+.rg-delay-1 { transition-delay:  90ms; }
+.rg-delay-2 { transition-delay: 180ms; }
+.rg-delay-3 { transition-delay: 270ms; }
+.rg-delay-4 { transition-delay: 360ms; }
+.rg-delay-5 { transition-delay: 450ms; }
+
+/* ── Gold rule: linha dourada se "desenha" da esquerda ── */
+@keyframes rg-rule-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.rg-rule-animate {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.rg-rule-animate.visible {
+  animation: rg-rule-draw 700ms var(--ease-expo) forwards;
+  transform-origin: left center;
+}
+
+/* ── Clip-up: para headings do hero com máscara ── */
+@keyframes rg-clip-up {
+  from { clip-path: inset(100% 0 0 0); transform: translateY(20px); }
+  to   { clip-path: inset(0% 0 0 0);   transform: translateY(0); }
+}
+.rg-clip-up {
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(20px);
+  animation-duration: 800ms;
+  animation-timing-function: var(--ease-expo);
+  animation-fill-mode: forwards;
+  animation-name: rg-clip-up;
+  animation-play-state: paused;
+  will-change: clip-path, transform;
+}
+.rg-clip-up.visible { animation-play-state: running; }
+
+/* ── Portfolio: scale-in ao invés de fade-up padrão ── */
+.rg-portfolio-stagger > * {
+  transform: scale(0.94) translateY(24px);
+}
+.rg-portfolio-stagger.visible > * {
+  transform: scale(1) translateY(0);
+}
+
+/* ── Reduced motion: respeita preferência do sistema ── */
+@media (prefers-reduced-motion: reduce) {
+  .rg-fade-up, .rg-fade-left, .rg-fade-right, .rg-scale-in,
+  .rg-stagger > *, .services-layout.rg-stagger .services-side > *, .rg-clip-up {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  .rg-rule-animate { transform: none !important; animation: none !important; }
+  .hero-fbadge { opacity: 1 !important; animation: none !important; }
+}
+
+/* ─── WHATSAPP FLOAT ──────────────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 99;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  animation: wa-pulse 3s ease infinite;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
+@keyframes wa-pulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.45); }
+  50%      { box-shadow: 0 4px 32px rgba(37,211,102,.65), 0 0 0 8px rgba(37,211,102,.12); }
+}
+
+/* ─── SECTION HEADERS ────────────────────────────────────── */
+.section-header { margin-bottom: 0; }
+.section-header.centered { text-align: center; }
+.section-header.centered .rg-h2 { margin-inline: auto; }
+.section-header.centered .rg-lead { margin-inline: auto; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-portrait-frame { width: clamp(200px, 30vw, 340px); }
+  .trust-items { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .service-card-featured {
+    grid-column: 1 / -1;
+    min-height: 25rem;
+  }
+  .service-card-sm {
+    grid-column: span 6;
+    min-height: 21rem;
+  }
+  .founder-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .founder-img-wrap { max-width: 480px; margin-inline: auto; }
+  .proc-row { grid-template-columns: 1fr 4.25rem 1fr; }
+  .proc-card { padding: 1.5rem 1.625rem; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Hero: coluna única */
+  .hero-content {
+    grid-template-columns: 1fr;
+    align-items: start;
+    min-height: auto;
+  }
+  .hero-text {
+    padding-right: 0;
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  /* Portrait compacto no mobile */
+  .hero-portrait {
+    overflow: hidden;
+    max-height: 30vh;
+  }
+  .hero-portrait-frame {
+    width: clamp(140px, 40vw, 220px);
+    max-height: 30vh;
+  }
+  .hero-portrait-img { height: 30vh; }
+  /* Badges ocultos no mobile */
+  .hero-fbadge { display: none; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+  .services-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  .service-card-featured,
+  .service-card-sm {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 0;
+  }
+  .service-card-featured {
+    grid-template-columns: 1fr;
+  }
+  .service-featured-img {
+    min-height: 0;
+    aspect-ratio: 16 / 7;
+  }
+  .service-featured-img img {
+    min-height: 0;
+  }
+  .service-card-featured::before,
+  .service-card-sm::before {
+    display: none;
+  }
+  .service-card-featured::after,
+  .service-card-sm::after {
+    display: none;
+  }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .services-secondary-items { grid-template-columns: 1fr; }
+  .service-mini { border-right: none; border-bottom: 1px solid var(--rg-line); }
+  .service-mini:last-child { border-bottom: none; }
+  .ft-body { grid-template-columns: 1fr 1fr; gap: 2rem 2.5rem; }
+  .ft-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .trust-items { grid-template-columns: 1fr; }
+  .trust-item { justify-content: flex-start; }
+  .proc-wrap::before {
+    left: 1.75rem;
+    top: 0;
+    bottom: 0;
+    transform: none;
+  }
+  .proc-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .proc-spacer { display: none; }
+  .proc-node { flex-shrink: 0; }
+  .proc-node-ring { width: 3rem; height: 3rem; font-size: .8rem; }
+  .proc-card { flex: 1; }
+  .proc-card-ghost { font-size: 5rem; }
+  .ft-body { grid-template-columns: 1fr; padding-block: 2.75rem 2rem; }
+  .ft-brand { grid-column: auto; }
+  .ft-bottom { flex-direction: column; align-items: center; text-align: center; gap: .625rem; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .hero-portrait { max-height: 24vh; }
+  .hero-portrait-frame { max-height: 24vh; }
+  .hero-portrait-img { height: 24vh; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .founder-accent { display: none; }
+  .founder-credential { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-portrait { display: none; }
+  .hero-text { padding-bottom: 4rem; }
+  .rg-btn { width: 100%; justify-content: center; }
+  .rg-btn-group { flex-direction: column; }
+  .cta-final-actions { flex-direction: column; align-items: center; }
+  .trust-items { gap: .625rem; }
+  .service-featured-body, .service-sm-body { padding: 1.25rem; }
+  .service-heading { gap: .75rem; }
+  .service-card-featured, .service-card-sm { min-height: 0; }
+  .service-card-featured::after,
+  .service-card-sm::after { display: none; }
+  .service-tags {
+    gap: .375rem;
+    margin: .875rem 0 1rem;
+  }
+  .service-tags span {
+    min-height: 1.625rem;
+    padding: .25rem .5rem;
+    font-size: .6875rem;
+  }
+  .service-actions { align-items: stretch; flex-direction: column; }
+  .service-note { text-align: center; }
+  .rg-card { min-height: auto; padding: 1.5rem; }
+  .rg-card__top { margin-bottom: 1.25rem; }
+  /* Botões pequenos não forçam largura total em mobile */
+  .rg-btn--sm { width: auto; }
+}
+</style>
+</head>
+<body class="pre-lock">
+
+<!-- ─── PRELOADER ───────────────────────────────────────── -->
+<div id="rg-preloader" role="status" aria-label="Carregando Rigal Engenharia">
+  <svg class="pre-logo" viewBox="0 0 296 185" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M267.835 184.594C268.319 184.402 268.897 184.426 269.119 184.647C269.342 184.868 268.946 185.025 268.24 184.997C267.46 184.965 267.301 184.807 267.835 184.594ZM0 151.087V118.456L1.50728 117.8C2.33628 117.439 15.3743 114.153 30.4806 110.498C87.4267 96.7195 118.162 89.2195 118.858 88.9325C119.294 88.7528 119.247 88.6151 118.74 88.5833C117.782 88.5231 117.571 50.9229 118.347 18.4716L118.788 0H120.281C121.102 0 132.283 4.89905 145.127 10.8868C199.836 36.3909 237.537 54.1368 238.318 54.7518C238.962 55.259 239.155 61.3163 239.155 80.9573V106.503H236.811H234.466V81.9549V57.4067L199.798 41.2465C180.731 32.3584 155.937 20.7636 144.699 15.4804C133.461 10.1971 123.89 5.71883 123.43 5.5286C122.765 5.25407 122.592 13.7102 122.592 46.5239C122.592 71.3417 122.839 87.8651 123.21 87.8651C123.771 87.8651 132.257 85.8494 184.988 73.1901C194.068 71.0104 202.132 69.227 202.908 69.227C204.314 69.227 204.32 69.3132 204.32 90.1948V111.163H202.311H200.301V92.5246C200.301 82.2737 200.155 73.8865 199.978 73.8865C199.8 73.8865 184.501 77.5965 165.98 82.1309C135.566 89.5772 102.521 97.5284 32.9282 114.145C19.905 117.255 8.07287 120.114 6.63455 120.499L4.01941 121.199V150.461V179.724H83.4029H162.786V181.721V183.718H81.3932H0V151.087ZM266.286 183.249C265.549 183.062 264.57 182.605 264.109 182.233C263.042 181.373 263.02 177.578 264.076 176.529C265.144 175.468 270.957 175.504 271.854 176.577C272.412 177.245 271.76 177.42 268.754 177.409L264.946 177.394L264.737 179.558C264.529 181.7 264.555 181.721 267.45 181.721C269.057 181.721 270.729 181.366 271.165 180.933C271.601 180.5 272.171 180.357 272.432 180.616C273.749 181.925 269.033 183.945 266.286 183.249ZM170.424 182.124C170.227 181.613 170.399 179.965 170.806 178.462C171.529 175.794 171.615 175.73 174.464 175.73C176.439 175.73 177.505 176.053 177.766 176.729C178.475 178.564 177.466 179.724 175.163 179.724C172.568 179.724 170.825 180.288 170.825 181.126C170.825 182.071 177.368 181.845 177.712 180.889C177.876 180.431 178.24 180.269 178.52 180.527C178.8 180.786 178.851 181.46 178.633 182.025C178.097 183.412 170.955 183.497 170.424 182.124ZM176.854 178.06C176.854 177.363 176.147 177.061 174.51 177.061C172.872 177.061 172.165 177.363 172.165 178.06C172.165 178.757 172.872 179.058 174.51 179.058C176.147 179.058 176.854 178.757 176.854 178.06ZM185.726 182.283C184.595 181.158 184.671 177.407 185.846 176.439C186.999 175.488 193.064 175.766 193.401 176.785C193.561 177.269 192.42 177.406 189.936 177.202L186.233 176.897V179.309C186.233 181.707 186.249 181.721 189.113 181.721C190.698 181.721 192.385 181.346 192.863 180.889C193.566 180.216 193.686 180.311 193.493 181.388C193.298 182.477 192.644 182.755 189.907 182.915C187.882 183.033 186.23 182.783 185.726 182.283ZM197.115 182.283C195.983 181.158 196.06 177.407 197.234 176.439C197.767 175.999 199.611 175.743 201.421 175.858L204.655 176.063V179.391V182.719L201.302 182.915C199.272 183.033 197.619 182.784 197.115 182.283ZM203.985 179.391C203.985 177.481 203.847 177.385 200.803 177.191L197.621 176.988V179.391V181.794L200.803 181.591C203.847 181.397 203.985 181.301 203.985 179.391ZM207.67 179.391C207.67 177.15 207.958 175.73 208.414 175.73C208.824 175.73 210.632 176.956 212.434 178.455L215.709 181.179V178.455C215.709 176.956 216.01 175.73 216.378 175.73C216.747 175.73 217.048 177.378 217.048 179.391C217.048 181.405 216.865 183.052 216.642 183.052C216.418 183.052 214.685 181.823 212.79 180.321L209.345 177.589L209.139 180.321C208.833 184.369 207.67 183.633 207.67 179.391ZM220.204 182.637C219.119 181.56 219.937 181.318 223.747 181.592C226.441 181.786 227.767 181.635 227.767 181.135C227.767 180.691 226.481 180.386 224.585 180.379C220.679 180.367 219.543 179.715 219.837 177.652C220.044 176.196 220.414 176.046 224.25 175.865C227.337 175.719 228.437 175.894 228.438 176.53C228.438 177.161 227.445 177.333 224.753 177.166C221.733 176.979 221.068 177.129 221.068 177.998C221.068 178.841 221.832 179.058 224.797 179.058C228.469 179.058 228.523 179.086 228.314 180.889C228.114 182.612 227.885 182.731 224.391 182.915C222.35 183.022 220.466 182.898 220.204 182.637ZM233.796 180.057C233.796 177.305 233.66 177.061 232.121 177.061C231.2 177.061 230.446 176.762 230.446 176.396C230.446 176.026 232.233 175.73 234.466 175.73C236.699 175.73 238.485 176.026 238.485 176.396C238.485 176.762 237.732 177.061 236.811 177.061C235.272 177.061 235.136 177.305 235.136 180.057C235.136 181.704 234.834 183.052 234.466 183.052C234.097 183.052 233.796 181.704 233.796 180.057ZM240.495 179.391V175.73H244.849C247.244 175.73 249.241 175.955 249.287 176.229C249.746 178.992 249.677 183.052 249.171 183.052C248.821 183.052 248.534 182.453 248.534 181.721C248.534 180.567 248.087 180.39 245.184 180.39C242.281 180.39 241.835 180.567 241.835 181.721C241.835 182.453 241.533 183.052 241.165 183.052C240.796 183.052 240.495 181.405 240.495 179.391ZM248.534 178.06C248.534 177.305 247.715 177.061 245.184 177.061C242.654 177.061 241.835 177.305 241.835 178.06C241.835 178.814 242.654 179.058 245.184 179.058C247.715 179.058 248.534 178.814 248.534 178.06ZM252.687 182.253C251.718 181.291 251.604 175.73 252.553 175.73C252.922 175.73 253.223 177.094 253.223 178.762V181.794L256.405 181.591L259.587 181.388L259.793 178.559C259.906 177.003 260.283 175.73 260.631 175.73C261.552 175.73 261.404 181.313 260.458 182.253C259.416 183.289 253.729 183.289 252.687 182.253ZM275.777 181.045C277.442 178.245 279.847 175.332 280.166 175.73C283.134 179.434 285.213 183.052 284.372 183.052C283.82 183.052 283.369 182.753 283.369 182.387C283.369 182.02 281.879 181.721 280.059 181.721C278.238 181.721 276.562 182.02 276.335 182.387C276.107 182.753 275.62 183.052 275.253 183.052C274.885 183.052 275.121 182.149 275.777 181.045ZM281.359 180.111C281.359 179.263 280.465 177.727 279.971 177.727C279.655 177.727 279.074 178.326 278.679 179.058C278.05 180.227 278.17 180.39 279.661 180.39C280.595 180.39 281.359 180.264 281.359 180.111ZM287.771 182.006C286.497 180.74 286.409 178.402 287.576 176.816C288.25 175.9 289.218 175.695 292.098 175.857L295.762 176.063L295.973 178.606C296.089 180.004 295.826 181.577 295.388 182.1C294.298 183.405 289.114 183.341 287.771 182.006ZM294.757 179.355V176.988L291.581 177.191C289.146 177.347 288.351 177.675 288.175 178.598C287.721 180.971 288.573 181.721 291.721 181.721C294.753 181.721 294.757 181.718 294.757 179.355ZM278.396 174.316C278.595 173.995 279.344 173.733 280.059 173.733C280.774 173.733 281.359 173.995 281.359 174.316C281.359 174.636 280.611 174.898 279.697 174.898C278.782 174.898 278.197 174.636 278.396 174.316ZM24.7864 160.42V151.767H34.5C43.767 151.767 44.2136 151.828 44.2136 153.098C44.2136 154.359 43.767 154.43 35.8398 154.43H27.466V156.759V159.089H34.8349C41.7573 159.089 42.2039 159.17 42.2039 160.42C42.2039 161.671 41.7573 161.752 34.8349 161.752H27.466V164.081V166.411H35.8398C43.767 166.411 44.2136 166.482 44.2136 167.742C44.2136 169.012 43.767 169.074 34.5 169.074H24.7864V160.42ZM52.2524 160.42C52.2524 152.858 52.3903 151.767 53.3467 151.767C53.9486 151.767 58.0182 154.62 62.3904 158.107L70.3398 164.448V158.107C70.3398 151.788 70.3451 151.767 72.0145 151.767H73.6893V160.42C73.6893 168.311 73.5829 169.074 72.4829 169.074C71.8194 169.074 67.7497 166.22 63.4392 162.732L55.6019 156.39V162.732C55.6019 169.053 55.5964 169.074 53.9271 169.074H52.2524V160.42ZM83.9426 167.467C82.1743 165.956 82.063 165.545 82.063 160.532C82.063 155.808 82.2475 155.007 83.6871 153.485C85.228 151.855 85.6627 151.767 92.1736 151.767C100.16 151.767 100.875 151.96 102.185 154.477C103.425 156.859 103.423 156.87 101.856 157.277C100.971 157.507 100.206 157.1 99.4958 156.023C98.5181 154.541 98.0312 154.43 92.5131 154.43C88.2261 154.43 86.3641 154.69 85.7976 155.368C85.3183 155.942 85.0912 158.076 85.2131 160.86L85.4126 165.413L92.2919 165.602C98.9268 165.786 99.1915 165.738 99.7405 164.271C100.288 162.807 100.162 162.743 96.3781 162.552C92.9933 162.381 92.4465 162.173 92.4465 161.054C92.4465 159.882 92.9335 159.755 97.3991 159.755C101.297 159.755 102.438 159.979 102.758 160.808C103.633 163.073 103.1 165.247 101.207 167.128C99.303 169.02 99.0621 169.074 92.5354 169.074C86.4047 169.074 85.6591 168.934 83.9426 167.467ZM111.204 160.42V151.767H121.252C130.854 151.767 131.301 151.826 131.301 153.098C131.301 154.359 130.854 154.43 122.927 154.43H114.553V156.759V159.089H121.922C128.845 159.089 129.291 159.17 129.291 160.42C129.291 161.671 128.845 161.752 121.922 161.752H114.553V164.081V166.411H122.927C130.854 166.411 131.301 166.482 131.301 167.742C131.301 169.015 130.854 169.074 121.252 169.074H111.204V160.42ZM139.34 160.42V151.767H140.959C141.849 151.767 142.679 152.069 142.803 152.439C142.927 152.808 146.193 155.624 150.06 158.697L157.092 164.284L157.284 158.025C157.466 152.067 157.547 151.767 158.959 151.766C160.424 151.764 160.439 151.868 160.237 160.419C160.08 167.048 159.825 169.074 159.147 169.074C158.659 169.074 154.759 166.228 150.48 162.75C146.2 159.272 142.546 156.426 142.359 156.426C142.172 156.426 142.019 159.272 142.019 162.75C142.019 168.63 141.925 169.074 140.68 169.074C139.408 169.074 139.34 168.63 139.34 160.42ZM169.485 160.42C169.485 151.89 169.507 151.767 170.993 151.766C172.401 151.765 172.485 152.005 172.27 155.427L172.041 159.089H179.472H186.903V155.428C186.903 151.967 186.994 151.767 188.578 151.767H190.252V160.42V169.074H188.516C186.829 169.074 186.785 168.968 187.008 165.412L187.238 161.75L179.701 161.75L172.165 161.752V165.413C172.165 168.63 172.003 169.074 170.825 169.074C169.554 169.074 169.485 168.63 169.485 160.42ZM202.779 160.445C206.022 155.7 209.127 151.824 209.679 151.832C210.487 151.845 220.785 166.184 221.626 168.467C221.749 168.801 221.136 169.074 220.263 169.074C219.211 169.074 218.277 168.401 217.49 167.077L216.303 165.08H209.61H202.918L201.777 167.073C200.937 168.539 200.14 169.066 198.76 169.069C196.913 169.073 196.974 168.941 202.779 160.445ZM212.141 159.128C210.971 157.319 209.864 155.826 209.679 155.812C209.495 155.797 208.362 157.277 207.162 159.101L204.98 162.417H209.624H214.268L212.141 159.128ZM229.107 160.42V151.767H238.381C250.181 151.767 249.793 151.433 249.793 161.593C249.793 168.553 249.703 169.074 248.494 169.074C247.4 169.074 247.194 168.599 247.194 166.078V163.083H239.49H231.786V166.078C231.786 168.63 231.588 169.074 230.446 169.074C229.175 169.074 229.107 168.63 229.107 160.42ZM247.065 157.258L247.271 154.43H239.529H231.786V156.981C231.786 158.385 231.997 159.742 232.254 159.998C232.512 160.253 235.903 160.378 239.791 160.275L246.859 160.087L247.065 157.258ZM258.582 160.42C258.582 151.891 258.604 151.767 260.09 151.766C261.586 151.764 261.595 151.827 261.392 160.419C261.202 168.478 261.098 169.074 259.885 169.074C258.662 169.074 258.582 168.547 258.582 160.42ZM274.427 160.42C277.929 155.195 280.651 151.781 281.296 151.803C281.895 151.824 284.277 154.793 286.718 158.562C289.113 162.259 291.63 166.136 292.311 167.178L293.549 169.074H291.826C290.588 169.074 289.809 168.51 289.063 167.077L288.024 165.08H281.387C274.779 165.08 274.745 165.088 273.32 167.077C272.401 168.36 271.306 169.074 270.257 169.074C268.742 169.074 269.039 168.456 274.427 160.42ZM285.378 162.027C285.378 161.812 284.412 160.299 283.23 158.664L281.082 155.692L279.952 157.18C279.331 157.999 278.321 159.512 277.708 160.543L276.594 162.417H280.986C283.402 162.417 285.378 162.242 285.378 162.027ZM71.6796 142.781C71.6796 142.232 71.2274 141.782 70.6747 141.782C69.8142 141.782 69.6699 139.822 69.6699 128.137V114.491H84.5114H99.353L101.863 117.113C103.547 118.872 104.524 120.624 104.833 122.438C105.322 125.315 104.744 130.241 103.853 130.788C103.558 130.969 103.722 132.243 104.217 133.621C104.711 134.998 105.129 137.847 105.145 139.952L105.175 143.779H102.495C100.56 143.779 99.8155 143.502 99.8155 142.781C99.8155 142.232 99.3633 141.782 98.8106 141.782C98.0291 141.782 97.8058 140.895 97.8058 137.788V133.795H87.0873H76.3689V138.787V143.779H74.0242C72.3867 143.779 71.6796 143.478 71.6796 142.781ZM97.6768 123.976L97.8828 121.147H87.1258H76.3689V124.16V127.172L86.9198 126.989L97.4708 126.805L97.6768 123.976ZM119.243 142.781C119.243 142.232 118.79 141.782 118.238 141.782C117.377 141.782 117.233 139.822 117.233 128.137V114.491H119.913C121.848 114.491 122.592 114.768 122.592 115.489C122.592 116.038 123.044 116.488 123.597 116.488C124.458 116.488 124.602 118.448 124.602 130.133V143.779H121.922C119.987 143.779 119.243 143.502 119.243 142.781ZM142.525 142.278C141.514 141.456 139.931 139.752 139.008 138.491C137.431 136.337 137.33 135.7 137.33 127.929V119.659L139.931 117.075L142.532 114.491H153.687C166.359 114.491 166.775 114.622 170.134 119.66C172.853 123.74 172.816 125.15 169.988 125.113C168.413 125.093 167.356 124.54 166.167 123.116L164.524 121.147H155.69C143.876 121.147 143.903 121.126 144.168 130.133L144.364 136.79L153.556 136.975C162.354 137.152 162.814 137.095 164.275 135.644L165.801 134.127L160.609 133.933C156.597 133.783 155.417 133.518 155.417 132.768C155.417 132.234 154.965 131.798 154.413 131.798C153.711 131.798 153.408 131.095 153.408 129.468V127.138H161.321H169.233L170.699 129.108C173.536 132.921 172.308 139.503 168.22 142.395C166.43 143.661 165.332 143.779 155.314 143.776C144.961 143.773 144.264 143.691 142.525 142.278ZM184.223 142.781C184.92 141.947 184.823 141.782 183.635 141.782C182.853 141.782 182.226 141.558 182.241 141.283C182.256 141.008 186.27 134.943 191.162 127.804C200.485 114.198 201.802 112.969 204.246 115.601C204.869 116.272 209.539 122.904 214.625 130.339L223.871 143.857L220.651 143.652C217.737 143.466 217.237 143.181 215.397 140.658L213.364 137.87L203.515 137.829L193.666 137.788L191.592 140.784C189.644 143.597 189.332 143.779 186.454 143.779C183.806 143.779 183.503 143.643 184.223 142.781ZM207.93 130.3C207.662 129.842 206.551 128.162 205.463 126.565L203.484 123.663L201.946 125.567C201.1 126.614 199.915 128.295 199.312 129.301L198.215 131.132H203.317C207.212 131.132 208.303 130.935 207.93 130.3ZM235.806 142.781C235.806 142.232 235.353 141.782 234.801 141.782C233.94 141.782 233.796 139.822 233.796 128.137V114.491H236.476C238.411 114.491 239.155 114.768 239.155 115.489C239.155 116.038 239.607 116.488 240.16 116.488C241.01 116.488 241.165 118.078 241.165 126.805V137.123H250.544C258.433 137.123 259.922 137.281 259.922 138.121C259.922 138.67 260.374 139.12 260.927 139.12C261.629 139.12 261.932 139.822 261.932 141.449V143.779H248.869C237.704 143.779 235.806 143.634 235.806 142.781Z" fill="currentColor"/>
+  </svg>
+  <span class="pre-tagline">Engenharia &amp; Construção</span>
+  <div class="pre-bar-track"><div class="pre-bar-fill"></div></div>
+</div>
+
+<!-- ─── NAV ─────────────────────────────────────────────── -->
+<header id="nav">
+  <div class="rg-container">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Rigal Engenharia — página inicial">
+        <svg width="296" height="185" viewBox="0 0 296 185" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M267.835 184.594C268.319 184.402 268.897 184.426 269.119 184.647C269.342 184.868 268.946 185.025 268.24 184.997C267.46 184.965 267.301 184.807 267.835 184.594ZM0 151.087V118.456L1.50728 117.8C2.33628 117.439 15.3743 114.153 30.4806 110.498C87.4267 96.7195 118.162 89.2195 118.858 88.9325C119.294 88.7528 119.247 88.6151 118.74 88.5833C117.782 88.5231 117.571 50.9229 118.347 18.4716L118.788 0H120.281C121.102 0 132.283 4.89905 145.127 10.8868C199.836 36.3909 237.537 54.1368 238.318 54.7518C238.962 55.259 239.155 61.3163 239.155 80.9573V106.503H236.811H234.466V81.9549V57.4067L199.798 41.2465C180.731 32.3584 155.937 20.7636 144.699 15.4804C133.461 10.1971 123.89 5.71883 123.43 5.5286C122.765 5.25407 122.592 13.7102 122.592 46.5239C122.592 71.3417 122.839 87.8651 123.21 87.8651C123.771 87.8651 132.257 85.8494 184.988 73.1901C194.068 71.0104 202.132 69.227 202.908 69.227C204.314 69.227 204.32 69.3132 204.32 90.1948V111.163H202.311H200.301V92.5246C200.301 82.2737 200.155 73.8865 199.978 73.8865C199.8 73.8865 184.501 77.5965 165.98 82.1309C135.566 89.5772 102.521 97.5284 32.9282 114.145C19.905 117.255 8.07287 120.114 6.63455 120.499L4.01941 121.199V150.461V179.724H83.4029H162.786V181.721V183.718H81.3932H0V151.087ZM266.286 183.249C265.549 183.062 264.57 182.605 264.109 182.233C263.042 181.373 263.02 177.578 264.076 176.529C265.144 175.468 270.957 175.504 271.854 176.577C272.412 177.245 271.76 177.42 268.754 177.409L264.946 177.394L264.737 179.558C264.529 181.7 264.555 181.721 267.45 181.721C269.057 181.721 270.729 181.366 271.165 180.933C271.601 180.5 272.171 180.357 272.432 180.616C273.749 181.925 269.033 183.945 266.286 183.249ZM170.424 182.124C170.227 181.613 170.399 179.965 170.806 178.462C171.529 175.794 171.615 175.73 174.464 175.73C176.439 175.73 177.505 176.053 177.766 176.729C178.475 178.564 177.466 179.724 175.163 179.724C172.568 179.724 170.825 180.288 170.825 181.126C170.825 182.071 177.368 181.845 177.712 180.889C177.876 180.431 178.24 180.269 178.52 180.527C178.8 180.786 178.851 181.46 178.633 182.025C178.097 183.412 170.955 183.497 170.424 182.124ZM176.854 178.06C176.854 177.363 176.147 177.061 174.51 177.061C172.872 177.061 172.165 177.363 172.165 178.06C172.165 178.757 172.872 179.058 174.51 179.058C176.147 179.058 176.854 178.757 176.854 178.06ZM185.726 182.283C184.595 181.158 184.671 177.407 185.846 176.439C186.999 175.488 193.064 175.766 193.401 176.785C193.561 177.269 192.42 177.406 189.936 177.202L186.233 176.897V179.309C186.233 181.707 186.249 181.721 189.113 181.721C190.698 181.721 192.385 181.346 192.863 180.889C193.566 180.216 193.686 180.311 193.493 181.388C193.298 182.477 192.644 182.755 189.907 182.915C187.882 183.033 186.23 182.783 185.726 182.283ZM197.115 182.283C195.983 181.158 196.06 177.407 197.234 176.439C197.767 175.999 199.611 175.743 201.421 175.858L204.655 176.063V179.391V182.719L201.302 182.915C199.272 183.033 197.619 182.784 197.115 182.283ZM203.985 179.391C203.985 177.481 203.847 177.385 200.803 177.191L197.621 176.988V179.391V181.794L200.803 181.591C203.847 181.397 203.985 181.301 203.985 179.391ZM207.67 179.391C207.67 177.15 207.958 175.73 208.414 175.73C208.824 175.73 210.632 176.956 212.434 178.455L215.709 181.179V178.455C215.709 176.956 216.01 175.73 216.378 175.73C216.747 175.73 217.048 177.378 217.048 179.391C217.048 181.405 216.865 183.052 216.642 183.052C216.418 183.052 214.685 181.823 212.79 180.321L209.345 177.589L209.139 180.321C208.833 184.369 207.67 183.633 207.67 179.391ZM220.204 182.637C219.119 181.56 219.937 181.318 223.747 181.592C226.441 181.786 227.767 181.635 227.767 181.135C227.767 180.691 226.481 180.386 224.585 180.379C220.679 180.367 219.543 179.715 219.837 177.652C220.044 176.196 220.414 176.046 224.25 175.865C227.337 175.719 228.437 175.894 228.438 176.53C228.438 177.161 227.445 177.333 224.753 177.166C221.733 176.979 221.068 177.129 221.068 177.998C221.068 178.841 221.832 179.058 224.797 179.058C228.469 179.058 228.523 179.086 228.314 180.889C228.114 182.612 227.885 182.731 224.391 182.915C222.35 183.022 220.466 182.898 220.204 182.637ZM233.796 180.057C233.796 177.305 233.66 177.061 232.121 177.061C231.2 177.061 230.446 176.762 230.446 176.396C230.446 176.026 232.233 175.73 234.466 175.73C236.699 175.73 238.485 176.026 238.485 176.396C238.485 176.762 237.732 177.061 236.811 177.061C235.272 177.061 235.136 177.305 235.136 180.057C235.136 181.704 234.834 183.052 234.466 183.052C234.097 183.052 233.796 181.704 233.796 180.057ZM240.495 179.391V175.73H244.849C247.244 175.73 249.241 175.955 249.287 176.229C249.746 178.992 249.677 183.052 249.171 183.052C248.821 183.052 248.534 182.453 248.534 181.721C248.534 180.567 248.087 180.39 245.184 180.39C242.281 180.39 241.835 180.567 241.835 181.721C241.835 182.453 241.533 183.052 241.165 183.052C240.796 183.052 240.495 181.405 240.495 179.391ZM248.534 178.06C248.534 177.305 247.715 177.061 245.184 177.061C242.654 177.061 241.835 177.305 241.835 178.06C241.835 178.814 242.654 179.058 245.184 179.058C247.715 179.058 248.534 178.814 248.534 178.06ZM252.687 182.253C251.718 181.291 251.604 175.73 252.553 175.73C252.922 175.73 253.223 177.094 253.223 178.762V181.794L256.405 181.591L259.587 181.388L259.793 178.559C259.906 177.003 260.283 175.73 260.631 175.73C261.552 175.73 261.404 181.313 260.458 182.253C259.416 183.289 253.729 183.289 252.687 182.253ZM275.777 181.045C277.442 178.245 279.847 175.332 280.166 175.73C283.134 179.434 285.213 183.052 284.372 183.052C283.82 183.052 283.369 182.753 283.369 182.387C283.369 182.02 281.879 181.721 280.059 181.721C278.238 181.721 276.562 182.02 276.335 182.387C276.107 182.753 275.62 183.052 275.253 183.052C274.885 183.052 275.121 182.149 275.777 181.045ZM281.359 180.111C281.359 179.263 280.465 177.727 279.971 177.727C279.655 177.727 279.074 178.326 278.679 179.058C278.05 180.227 278.17 180.39 279.661 180.39C280.595 180.39 281.359 180.264 281.359 180.111ZM287.771 182.006C286.497 180.74 286.409 178.402 287.576 176.816C288.25 175.9 289.218 175.695 292.098 175.857L295.762 176.063L295.973 178.606C296.089 180.004 295.826 181.577 295.388 182.1C294.298 183.405 289.114 183.341 287.771 182.006ZM294.757 179.355V176.988L291.581 177.191C289.146 177.347 288.351 177.675 288.175 178.598C287.721 180.971 288.573 181.721 291.721 181.721C294.753 181.721 294.757 181.718 294.757 179.355ZM278.396 174.316C278.595 173.995 279.344 173.733 280.059 173.733C280.774 173.733 281.359 173.995 281.359 174.316C281.359 174.636 280.611 174.898 279.697 174.898C278.782 174.898 278.197 174.636 278.396 174.316ZM24.7864 160.42V151.767H34.5C43.767 151.767 44.2136 151.828 44.2136 153.098C44.2136 154.359 43.767 154.43 35.8398 154.43H27.466V156.759V159.089H34.8349C41.7573 159.089 42.2039 159.17 42.2039 160.42C42.2039 161.671 41.7573 161.752 34.8349 161.752H27.466V164.081V166.411H35.8398C43.767 166.411 44.2136 166.482 44.2136 167.742C44.2136 169.012 43.767 169.074 34.5 169.074H24.7864V160.42ZM52.2524 160.42C52.2524 152.858 52.3903 151.767 53.3467 151.767C53.9486 151.767 58.0182 154.62 62.3904 158.107L70.3398 164.448V158.107C70.3398 151.788 70.3451 151.767 72.0145 151.767H73.6893V160.42C73.6893 168.311 73.5829 169.074 72.4829 169.074C71.8194 169.074 67.7497 166.22 63.4392 162.732L55.6019 156.39V162.732C55.6019 169.053 55.5964 169.074 53.9271 169.074H52.2524V160.42ZM83.9426 167.467C82.1743 165.956 82.063 165.545 82.063 160.532C82.063 155.808 82.2475 155.007 83.6871 153.485C85.228 151.855 85.6627 151.767 92.1736 151.767C100.16 151.767 100.875 151.96 102.185 154.477C103.425 156.859 103.423 156.87 101.856 157.277C100.971 157.507 100.206 157.1 99.4958 156.023C98.5181 154.541 98.0312 154.43 92.5131 154.43C88.2261 154.43 86.3641 154.69 85.7976 155.368C85.3183 155.942 85.0912 158.076 85.2131 160.86L85.4126 165.413L92.2919 165.602C98.9268 165.786 99.1915 165.738 99.7405 164.271C100.288 162.807 100.162 162.743 96.3781 162.552C92.9933 162.381 92.4465 162.173 92.4465 161.054C92.4465 159.882 92.9335 159.755 97.3991 159.755C101.297 159.755 102.438 159.979 102.758 160.808C103.633 163.073 103.1 165.247 101.207 167.128C99.303 169.02 99.0621 169.074 92.5354 169.074C86.4047 169.074 85.6591 168.934 83.9426 167.467ZM111.204 160.42V151.767H121.252C130.854 151.767 131.301 151.826 131.301 153.098C131.301 154.359 130.854 154.43 122.927 154.43H114.553V156.759V159.089H121.922C128.845 159.089 129.291 159.17 129.291 160.42C129.291 161.671 128.845 161.752 121.922 161.752H114.553V164.081V166.411H122.927C130.854 166.411 131.301 166.482 131.301 167.742C131.301 169.015 130.854 169.074 121.252 169.074H111.204V160.42ZM139.34 160.42V151.767H140.959C141.849 151.767 142.679 152.069 142.803 152.439C142.927 152.808 146.193 155.624 150.06 158.697L157.092 164.284L157.284 158.025C157.466 152.067 157.547 151.767 158.959 151.766C160.424 151.764 160.439 151.868 160.237 160.419C160.08 167.048 159.825 169.074 159.147 169.074C158.659 169.074 154.759 166.228 150.48 162.75C146.2 159.272 142.546 156.426 142.359 156.426C142.172 156.426 142.019 159.272 142.019 162.75C142.019 168.63 141.925 169.074 140.68 169.074C139.408 169.074 139.34 168.63 139.34 160.42ZM169.485 160.42C169.485 151.89 169.507 151.767 170.993 151.766C172.401 151.765 172.485 152.005 172.27 155.427L172.041 159.089H179.472H186.903V155.428C186.903 151.967 186.994 151.767 188.578 151.767H190.252V160.42V169.074H188.516C186.829 169.074 186.785 168.968 187.008 165.412L187.238 161.75L179.701 161.75L172.165 161.752V165.413C172.165 168.63 172.003 169.074 170.825 169.074C169.554 169.074 169.485 168.63 169.485 160.42ZM202.779 160.445C206.022 155.7 209.127 151.824 209.679 151.832C210.487 151.845 220.785 166.184 221.626 168.467C221.749 168.801 221.136 169.074 220.263 169.074C219.211 169.074 218.277 168.401 217.49 167.077L216.303 165.08H209.61H202.918L201.777 167.073C200.937 168.539 200.14 169.066 198.76 169.069C196.913 169.073 196.974 168.941 202.779 160.445ZM212.141 159.128C210.971 157.319 209.864 155.826 209.679 155.812C209.495 155.797 208.362 157.277 207.162 159.101L204.98 162.417H209.624H214.268L212.141 159.128ZM229.107 160.42V151.767H238.381C250.181 151.767 249.793 151.433 249.793 161.593C249.793 168.553 249.703 169.074 248.494 169.074C247.4 169.074 247.194 168.599 247.194 166.078V163.083H239.49H231.786V166.078C231.786 168.63 231.588 169.074 230.446 169.074C229.175 169.074 229.107 168.63 229.107 160.42ZM247.065 157.258L247.271 154.43H239.529H231.786V156.981C231.786 158.385 231.997 159.742 232.254 159.998C232.512 160.253 235.903 160.378 239.791 160.275L246.859 160.087L247.065 157.258ZM258.582 160.42C258.582 151.891 258.604 151.767 260.09 151.766C261.586 151.764 261.595 151.827 261.392 160.419C261.202 168.478 261.098 169.074 259.885 169.074C258.662 169.074 258.582 168.547 258.582 160.42ZM274.427 160.42C277.929 155.195 280.651 151.781 281.296 151.803C281.895 151.824 284.277 154.793 286.718 158.562C289.113 162.259 291.63 166.136 292.311 167.178L293.549 169.074H291.826C290.588 169.074 289.809 168.51 289.063 167.077L288.024 165.08H281.387C274.779 165.08 274.745 165.088 273.32 167.077C272.401 168.36 271.306 169.074 270.257 169.074C268.742 169.074 269.039 168.456 274.427 160.42ZM285.378 162.027C285.378 161.812 284.412 160.299 283.23 158.664L281.082 155.692L279.952 157.18C279.331 157.999 278.321 159.512 277.708 160.543L276.594 162.417H280.986C283.402 162.417 285.378 162.242 285.378 162.027ZM71.6796 142.781C71.6796 142.232 71.2274 141.782 70.6747 141.782C69.8142 141.782 69.6699 139.822 69.6699 128.137V114.491H84.5114H99.353L101.863 117.113C103.547 118.872 104.524 120.624 104.833 122.438C105.322 125.315 104.744 130.241 103.853 130.788C103.558 130.969 103.722 132.243 104.217 133.621C104.711 134.998 105.129 137.847 105.145 139.952L105.175 143.779H102.495C100.56 143.779 99.8155 143.502 99.8155 142.781C99.8155 142.232 99.3633 141.782 98.8106 141.782C98.0291 141.782 97.8058 140.895 97.8058 137.788V133.795H87.0873H76.3689V138.787V143.779H74.0242C72.3867 143.779 71.6796 143.478 71.6796 142.781ZM97.6768 123.976L97.8828 121.147H87.1258H76.3689V124.16V127.172L86.9198 126.989L97.4708 126.805L97.6768 123.976ZM119.243 142.781C119.243 142.232 118.79 141.782 118.238 141.782C117.377 141.782 117.233 139.822 117.233 128.137V114.491H119.913C121.848 114.491 122.592 114.768 122.592 115.489C122.592 116.038 123.044 116.488 123.597 116.488C124.458 116.488 124.602 118.448 124.602 130.133V143.779H121.922C119.987 143.779 119.243 143.502 119.243 142.781ZM142.525 142.278C141.514 141.456 139.931 139.752 139.008 138.491C137.431 136.337 137.33 135.7 137.33 127.929V119.659L139.931 117.075L142.532 114.491H153.687C166.359 114.491 166.775 114.622 170.134 119.66C172.853 123.74 172.816 125.15 169.988 125.113C168.413 125.093 167.356 124.54 166.167 123.116L164.524 121.147H155.69C143.876 121.147 143.903 121.126 144.168 130.133L144.364 136.79L153.556 136.975C162.354 137.152 162.814 137.095 164.275 135.644L165.801 134.127L160.609 133.933C156.597 133.783 155.417 133.518 155.417 132.768C155.417 132.234 154.965 131.798 154.413 131.798C153.711 131.798 153.408 131.095 153.408 129.468V127.138H161.321H169.233L170.699 129.108C173.536 132.921 172.308 139.503 168.22 142.395C166.43 143.661 165.332 143.779 155.314 143.776C144.961 143.773 144.264 143.691 142.525 142.278ZM184.223 142.781C184.92 141.947 184.823 141.782 183.635 141.782C182.853 141.782 182.226 141.558 182.241 141.283C182.256 141.008 186.27 134.943 191.162 127.804C200.485 114.198 201.802 112.969 204.246 115.601C204.869 116.272 209.539 122.904 214.625 130.339L223.871 143.857L220.651 143.652C217.737 143.466 217.237 143.181 215.397 140.658L213.364 137.87L203.515 137.829L193.666 137.788L191.592 140.784C189.644 143.597 189.332 143.779 186.454 143.779C183.806 143.779 183.503 143.643 184.223 142.781ZM207.93 130.3C207.662 129.842 206.551 128.162 205.463 126.565L203.484 123.663L201.946 125.567C201.1 126.614 199.915 128.295 199.312 129.301L198.215 131.132H203.317C207.212 131.132 208.303 130.935 207.93 130.3ZM235.806 142.781C235.806 142.232 235.353 141.782 234.801 141.782C233.94 141.782 233.796 139.822 233.796 128.137V114.491H236.476C238.411 114.491 239.155 114.768 239.155 115.489C239.155 116.038 239.607 116.488 240.16 116.488C241.01 116.488 241.165 118.078 241.165 126.805V137.123H250.544C258.433 137.123 259.922 137.281 259.922 138.121C259.922 138.67 260.374 139.12 260.927 139.12C261.629 139.12 261.932 139.822 261.932 141.449V143.779H248.869C237.704 143.779 235.806 143.634 235.806 142.781Z" fill="currentColor"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#diferenciais">Sobre a Rigal</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#fundadora">Fundadora</a></li>
+        <li><a href="#portfolio">Obras</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20gratuito." target="_blank" rel="noopener" class="rg-btn rg-btn--primary">Orçamento gratuito</a>
+      </div>
+      <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#diferenciais" onclick="closeMenu()">Sobre a Rigal</a>
+    <a href="#servicos" onclick="closeMenu()">Serviços</a>
+    <a href="#fundadora" onclick="closeMenu()">Fundadora</a>
+    <a href="#portfolio" onclick="closeMenu()">Obras</a>
+    <a href="#faq" onclick="closeMenu()">Dúvidas</a>
+    <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20gratuito." target="_blank" rel="noopener" class="rg-btn rg-btn--primary">Orçamento gratuito</a>
+  </div>
+</header>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="Case - ÉLIDE E ROBERTO/Elide 12.webp" alt="" role="presentation" onload="this.classList.add('loaded')" onerror="tryNextHeroBg(this)">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-accent-line" aria-hidden="true"></div>
+  <div class="rg-container hero-content">
+
+    <!-- ── Coluna de texto ── -->
+    <div class="hero-text">
+      <p class="rg-kicker rg-fade-up" data-hero="0">Reforma Residencial &amp; Comercial · São José dos Campos</p>
+      <h1 class="rg-h1 rg-clip-up" data-hero="1">Sua obra, no prazo certo e com qualidade Rigal.</h1>
+      <p class="rg-lead rg-fade-up" data-hero="2">A Rigal cuida de cada detalhe da sua reforma — do planejamento ao acabamento final — com orçamento transparente, prazo real e comunicação direta. Você acompanha tudo. A gente resolve.</p>
+      <div class="hero-bullets rg-fade-up" data-hero="3">
+        <span class="hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Reforma Residencial
+        </span>
+        <span class="hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Reforma Comercial
+        </span>
+        <span class="hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Construção Completa
+        </span>
+      </div>
+      <div class="rg-btn-group rg-fade-up" data-hero="4">
+        <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20minha%20reforma." target="_blank" rel="noopener" class="rg-btn rg-btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Quero meu orçamento gratuito
+        </a>
+        <a href="#portfolio" class="rg-btn rg-btn--ghost">Ver obras realizadas</a>
+      </div>
+      <p class="hero-microcopy rg-fade-up" data-hero="5">Atendimento em São José dos Campos e região · Resposta em até 24h</p>
+    </div>
+
+    <!-- ── Retrato da fundadora ── -->
+    <div class="hero-portrait rg-fade-right" data-hero="2" aria-label="Gracielle Galdino, fundadora da Rigal Engenharia">
+
+      <!-- Glows ambientais -->
+      <div class="hero-portrait-glow" aria-hidden="true"></div>
+      <div class="hero-portrait-halo" aria-hidden="true"></div>
+
+      <!-- Arco com anel dourado -->
+      <div class="hero-portrait-frame">
+        <img
+          src="Rigal-Graci/gracy_galdino_87_1.webp"
+          alt="Gracielle Galdino — Engenheira Civil e Fundadora da Rigal Engenharia"
+          class="hero-portrait-img"
+          loading="eager"
+        >
+      </div>
+
+      <!-- Badge: anos de experiência -->
+      <div class="hero-fbadge hero-fbadge--years" aria-hidden="true">
+        <div class="hero-fbadge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+        </div>
+        <div>
+          <span class="hero-fbadge-num">12+</span>
+          <span class="hero-fbadge-label">anos de experiência</span>
+        </div>
+      </div>
+
+      <!-- Badge: obras entregues -->
+      <div class="hero-fbadge hero-fbadge--obras" aria-hidden="true">
+        <div class="hero-fbadge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <span class="hero-fbadge-num">100+</span>
+          <span class="hero-fbadge-label">obras entregues</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ─── TRUST MARQUEE ───────────────────────────────────────── -->
+<div id="trust-bar" aria-label="Diferenciais Rigal Engenharia">
+  <div class="trust-track" aria-hidden="true">
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Controle técnico</span>
+    <span class="trust-sep">◆</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Prazo cumprido</span>
+    <span class="trust-sep">◆</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Orçamento claro</span>
+    <span class="trust-sep">◆</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>São José e região</span>
+    <span class="trust-sep">◆</span>
+    <!-- set 2 — duplicado para loop contínuo -->
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Controle técnico</span>
+    <span class="trust-sep">◆</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Prazo cumprido</span>
+    <span class="trust-sep">◆</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Orçamento claro</span>
+    <span class="trust-sep">◆</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>São José e região</span>
+    <span class="trust-sep">◆</span>
+  </div>
+</div>
+
+<!-- ─── DIFERENCIAIS ──────────────────────────────────────── -->
+<section id="diferenciais" class="rg-section rg-section--concrete">
+  <div class="rg-container">
+    <div class="section-header rg-fade-up">
+      <p class="rg-kicker">Por que a Rigal</p>
+      <h2 class="rg-h2">Rigor técnico que se traduz em obra entregue.</h2>
+      <p class="rg-lead">Controle de escopo, cronograma e comunicação em cada etapa — para que você não precise cobrar o que já foi acordado.</p>
+    </div>
+    <div class="diff-grid rg-stagger">
+      <article class="rg-card">
+        <div class="rg-card__top">
+          <div class="rg-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M9 11.5l2 2 4-4"/><path d="M7 4.5h10"/><path d="M9 2.5h6v4H9z"/><path d="M6 5.5H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-11a2 2 0 0 0-2-2h-1"/><path d="M7 16.5h10"/></svg>
+          </div>
+          <span class="rg-card__step">01</span>
+        </div>
+        <div class="rg-card__body">
+          <h3>Planejamento + execução na mesma mão</h3>
+          <p>Você não fica no meio do caminho entre o projeto e o construtor. A Rigal assume a responsabilidade técnica do início ao acabamento final.</p>
+        </div>
+      </article>
+      <article class="rg-card">
+        <div class="rg-card__top">
+          <div class="rg-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 3h10a2 2 0 0 1 2 2v16l-3-1.5-3 1.5-3-1.5L7 21V5a2 2 0 0 1 2-2Z"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h3"/><path d="M16 14.5c0 .8-.7 1.5-1.8 1.5H13"/><path d="M15 11.5v6"/></svg>
+          </div>
+          <span class="rg-card__step">02</span>
+        </div>
+        <div class="rg-card__body">
+          <h3>Orçamento sem letra miúda</h3>
+          <p>Escopo detalhado, investimento previsível e nenhuma surpresa no meio da obra. Você sabe exatamente onde cada real será aplicado antes de assinar.</p>
+        </div>
+      </article>
+      <article class="rg-card">
+        <div class="rg-card__top">
+          <div class="rg-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/><path d="M3.5 9h17"/><path d="M8 14l2.2 2.2L16 11.5"/></svg>
+          </div>
+          <span class="rg-card__step">03</span>
+        </div>
+        <div class="rg-card__body">
+          <h3>Cronograma que se cumpre</h3>
+          <p>Planejamos com margens técnicas reais, não com promessas. Qualquer variação é comunicada proativamente — sem sumiço no meio do processo.</p>
+        </div>
+      </article>
+      <article class="rg-card">
+        <div class="rg-card__top">
+          <div class="rg-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21s7-3.5 7-10V5.5L12 3 5 5.5V11c0 6.5 7 10 7 10Z"/><path d="M9 12l2 2 4-4"/><path d="M8 18.2h8"/></svg>
+          </div>
+          <span class="rg-card__step">04</span>
+        </div>
+        <div class="rg-card__body">
+          <h3>Pós-entrega com responsabilidade</h3>
+          <p>Concluída a obra, continuamos disponíveis. Dúvidas, ajustes, orientações de uso e manutenção — o vínculo técnico não termina na entrega das chaves.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVIÇOS ───────────────────────────────────────────── -->
+<section id="servicos" class="rg-section">
+  <div class="rg-container">
+    <div class="section-header rg-fade-up">
+      <p class="rg-kicker">Serviços</p>
+      <h2 class="rg-h2">O que a Rigal faz por você</h2>
+      <p class="rg-lead">Projeto, execução e gestão integrada — para que você não precise coordenar equipes, cobrar prazos ou resolver imprevistos sozinho.</p>
+    </div>
+
+    <div class="services-layout rg-stagger">
+      <article class="service-card-featured">
+        <div class="service-featured-img">
+          <img src="Case - ÉLIDE E ROBERTO/Obra Élide.webp" alt="Apartamento reformado com cozinha integrada e acabamento em madeira" loading="lazy" onerror="this.src='Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.51 (1).webp'">
+        </div>
+        <div class="service-featured-body">
+          <div class="service-heading">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10.5V21h14V10.5"/><path d="M9 21v-6h6v6"/><path d="M9 10h6"/></svg>
+            </span>
+            <div>
+              <span class="service-eyebrow">Reforma Residencial</span>
+              <h3>Casa renovada com planejamento, obra limpa e acabamento consistente.</h3>
+            </div>
+          </div>
+          <p>Ideal para quem quer reformar apartamento, casa, cozinha, banheiro ou área social sem virar gerente de obra. A Rigal assume escopo, fornecedores, execução e comunicação.</p>
+          <div class="service-tags" aria-label="Escopos de reforma residencial">
+            <span>Cozinhas e banheiros</span>
+            <span>Layout e integração</span>
+            <span>Pisos e revestimentos</span>
+            <span>Elétrica e hidráulica</span>
+            <span>Acabamento final</span>
+          </div>
+          <div class="service-actions">
+            <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Reforma%20Residencial." target="_blank" rel="noopener" class="rg-btn rg-btn--primary">Quero reformar minha casa</a>
+            <span class="service-note">Do diagnóstico à entrega.</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="services-side">
+        <article class="service-card-sm">
+          <div class="service-sm-img">
+            <img src="Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.14.webp" alt="Ambiente comercial reformado com divisória metálica e recepção" loading="lazy" onerror="this.src='Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.08.webp'">
+          </div>
+          <div class="service-sm-body">
+            <div class="service-heading">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-7h6v7"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+              </span>
+              <div>
+                <span class="service-eyebrow">Reforma Comercial</span>
+                <h3>Espaço comercial pronto para operar.</h3>
+              </div>
+            </div>
+            <p>Layout funcional, adequações técnicas e obra planejada para reduzir impacto na rotina do negócio.</p>
+            <div class="service-tags" aria-label="Escopos de reforma comercial">
+              <span>Layout</span>
+              <span>Acessibilidade</span>
+              <span>Instalações</span>
+              <span>Normas técnicas</span>
+            </div>
+            <div class="service-actions">
+              <a href="https://wa.me/5512996600712?text=Olá!%20Tenho%20interesse%20em%20Reforma%20Comercial." target="_blank" rel="noopener" class="rg-btn rg-btn--secondary">Reformar meu espaço</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card-sm">
+          <div class="service-sm-img">
+            <img src="Case - ÉLIDE E ROBERTO/Elide 15.webp" alt="Ambiente em obra durante reforma estrutural" loading="lazy" onerror="this.src='Case - ÉLIDE E ROBERTO/Elide 10.webp'">
+          </div>
+          <div class="service-sm-body">
+            <div class="service-heading">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V8l6-4 6 4v13"/><path d="M9 21v-5h6v5"/><path d="M8 11h8"/></svg>
+              </span>
+              <div>
+                <span class="service-eyebrow">Construção</span>
+                <h3>Construção com gestão do início ao fim.</h3>
+              </div>
+            </div>
+            <p>Do terreno ao acabamento, com cronograma, compras, equipes e critérios técnicos bem definidos.</p>
+            <div class="service-tags" aria-label="Escopos de construção">
+              <span>Projeto</span>
+              <span>Execução</span>
+              <span>Fornecedores</span>
+              <span>Entrega técnica</span>
+            </div>
+            <div class="service-actions">
+              <a href="https://wa.me/5512996600712?text=Olá!%20Quero%20construir%20com%20a%20Rigal." target="_blank" rel="noopener" class="rg-btn rg-btn--secondary">Quero construir</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Serviços secundários -->
+    <div class="services-secondary rg-fade-up">
+      <div class="services-secondary-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18"/><path d="M3 12h18"/><path d="m5 5 14 14"/><path d="m19 5-14 14"/></svg>
+        Serviços de apoio
+      </div>
+      <div class="services-secondary-items">
+        <div class="service-mini">
+          <h4>Consultoria Técnica</h4>
+          <p>Visita de diagnóstico, análise de viabilidade e orientação técnica antes de qualquer decisão. Ideal para quem ainda está avaliando o escopo da obra.</p>
+          <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20uma%20consultoria%20técnica." target="_blank" rel="noopener" class="rg-btn rg-btn--secondary rg-btn--sm">Solicitar visita técnica</a>
+        </div>
+        <div class="service-mini">
+          <h4>Gerenciamento de Obras</h4>
+          <p>Acompanhamento técnico de obras em andamento, controle de fornecedores, verificação de qualidade e relatórios de execução para quem já tem equipe contratada.</p>
+          <a href="https://wa.me/5512996600712?text=Olá!%20Tenho%20interesse%20em%20Gerenciamento%20de%20Obra." target="_blank" rel="noopener" class="rg-btn rg-btn--secondary rg-btn--sm">Saber mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FUNDADORA ──────────────────────────────────────────── -->
+<section id="fundadora" class="rg-section rg-section--concrete">
+  <div class="rg-container">
+    <div class="founder-layout">
+      <div class="founder-img-wrap rg-fade-left">
+        <div class="founder-img-main">
+          <img src="Rigal-Graci/gracy_galdino_1_1.webp" alt="Gracielle Galdino — Engenheira Civil e Fundadora da Rigal Engenharia" loading="lazy" onerror="this.src='Rigal-Graci/Gracy Galdino-13.webp'">
+        </div>
+        <div class="founder-accent">
+          <img src="Rigal-Graci/gracy_galdino_33_1.webp" alt="Gracielle Galdino em obra" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="founder-credential">
+          <strong class="rg-countup" data-target="12" data-suffix="+">12+</strong>
+          <span>Anos de experiência</span>
+        </div>
+      </div>
+
+      <div class="founder-body rg-fade-right">
+        <p class="rg-kicker">Quem está por trás da Rigal</p>
+        <h2 class="rg-h2">Gracielle Galdino</h2>
+        <p style="color:var(--rg-gold-700);font-weight:700;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;margin-top:.5rem;margin-bottom:1.5rem;">Engenheira Civil · Fundadora da Rigal Engenharia</p>
+
+        <div class="rg-gold-rule rg-rule-animate"></div>
+
+        <p style="color:var(--rg-steel);line-height:1.75;margin-bottom:1rem;">A Rigal nasceu de uma convicção simples: <strong style="color:var(--rg-blue-800);">obra bem-feita não é sorte, é método.</strong></p>
+
+        <p style="color:var(--rg-steel);line-height:1.75;margin-bottom:1rem;">Gracielle Galdino é engenheira civil com mais de 12 anos de experiência em obras residenciais e comerciais na região de São José dos Campos. Ao longo da carreira, percebeu que o maior problema das obras não era técnico — era a falta de comunicação, de planejamento real e de comprometimento com o cliente.</p>
+
+        <p style="color:var(--rg-steel);line-height:1.75;margin-bottom:1.5rem;">Foi para resolver exatamente isso que fundou a Rigal Engenharia. Aqui, cada projeto passa por ela: da visita técnica ao acabamento final. Não porque não confia na equipe — mas porque acredita que responsabilidade técnica não se delega.</p>
+
+        <div class="founder-quote">
+          <p>"Eu entrego a obra que eu mesma moraria. Esse é o padrão que a Rigal defende em cada metro quadrado."</p>
+          <cite>— Gracielle Galdino, fundadora da Rigal Engenharia</cite>
+        </div>
+
+        <a href="https://wa.me/5512996600712?text=Olá%20Gracielle!%20Gostaria%20de%20conversar%20sobre%20meu%20projeto." target="_blank" rel="noopener" class="rg-btn rg-btn--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Falar com a Gracielle
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESSO ───────────────────────────────────────────── -->
+<section id="processo" class="rg-section rg-section--blue">
+  <div class="rg-container">
+    <div class="section-header centered rg-fade-up">
+      <p class="rg-kicker">Como trabalhamos</p>
+      <h2 class="rg-h2">Da visita ao acabamento — sem surpresas</h2>
+      <p class="rg-lead">Cada etapa tem responsável, critério e comunicação. Você acompanha a evolução da obra sem precisar cobrar ou descobrir problemas tarde demais.</p>
+    </div>
+
+    <div class="proc-wrap">
+
+      <!-- 01 — card esquerda -->
+      <div class="proc-row proc-row--left rg-fade-up">
+        <div class="proc-card">
+          <span class="proc-card-ghost" aria-hidden="true">01</span>
+          <p class="proc-tag">Etapa 01</p>
+          <h3>Visita técnica e escuta ativa</h3>
+          <p>Conhecemos o espaço, entendemos seus objetivos e mapeamos cada detalhe antes de qualquer proposta. Sem diagnóstico correto, não há planejamento sério.</p>
+          <ul class="proc-checks">
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Levantamento técnico completo do espaço
+            </li>
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Sem custo, sem compromisso
+            </li>
+          </ul>
+        </div>
+        <div class="proc-node">
+          <div class="proc-node-ring">01</div>
+        </div>
+        <div class="proc-spacer" aria-hidden="true"></div>
+      </div>
+
+      <!-- 02 — card direita -->
+      <div class="proc-row proc-row--right rg-fade-up">
+        <div class="proc-spacer" aria-hidden="true"></div>
+        <div class="proc-node">
+          <div class="proc-node-ring">02</div>
+        </div>
+        <div class="proc-card">
+          <span class="proc-card-ghost" aria-hidden="true">02</span>
+          <p class="proc-tag">Etapa 02</p>
+          <h3>Proposta clara, cronograma real</h3>
+          <p>Escopo detalhado, etapas definidas e investimento previsível. Sem letras miúdas, sem margens ocultas e sem promessas que não podem ser cumpridas.</p>
+          <ul class="proc-checks">
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Orçamento itemizado e previsível
+            </li>
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Cronograma com marcos e prazos claros
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 03 — card esquerda -->
+      <div class="proc-row proc-row--left rg-fade-up">
+        <div class="proc-card">
+          <span class="proc-card-ghost" aria-hidden="true">03</span>
+          <p class="proc-tag">Etapa 03</p>
+          <h3>Execução com gestão ativa</h3>
+          <p>Acompanhamento técnico diário, atualizações por marcos de execução e canal direto com nossa equipe. Você está sempre informado, nunca no escuro.</p>
+          <ul class="proc-checks">
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Relatórios periódicos de progresso
+            </li>
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Canal direto com o responsável técnico
+            </li>
+          </ul>
+        </div>
+        <div class="proc-node">
+          <div class="proc-node-ring">03</div>
+        </div>
+        <div class="proc-spacer" aria-hidden="true"></div>
+      </div>
+
+      <!-- 04 — card direita -->
+      <div class="proc-row proc-row--right rg-fade-up">
+        <div class="proc-spacer" aria-hidden="true"></div>
+        <div class="proc-node">
+          <div class="proc-node-ring">04</div>
+        </div>
+        <div class="proc-card">
+          <span class="proc-card-ghost" aria-hidden="true">04</span>
+          <p class="proc-tag">Etapa 04</p>
+          <h3>Entrega e pós-obra</h3>
+          <p>Vistoria final detalhada, orientações de uso e manutenção — e suporte contínuo após a entrega das chaves. A responsabilidade técnica não se encerra no último dia de obra.</p>
+          <ul class="proc-checks">
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Vistoria técnica final documentada
+            </li>
+            <li class="proc-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Suporte e garantia pós-entrega
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3.5rem;" class="rg-fade-up">
+      <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" rel="noopener" class="rg-btn rg-btn--primary">
+        Agendar visita técnica gratuita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTFOLIO ──────────────────────────────────────────── -->
+<section id="portfolio" class="rg-section">
+  <div class="rg-container">
+    <div class="section-header rg-fade-up">
+      <p class="rg-kicker">Portfólio</p>
+      <h2 class="rg-h2">Obras que falam por si</h2>
+      <p class="rg-lead">Reformas e construções conduzidas pela Rigal — projeto, execução e acabamento de ponta a ponta. Veja o resultado real.</p>
+    </div>
+
+    <div class="portfolio-grid rg-stagger rg-portfolio-stagger">
+
+      <div class="portfolio-card" data-case="belle-bruno" data-case-start="0" role="button" tabindex="0" aria-label="Abrir galeria: Belle &amp; Bruno">
+        <img src="Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.56.webp" alt="Case Belle e Bruno" loading="lazy" onerror="this.src='Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.46.webp'">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Belle &amp; Bruno</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Reforma Residencial</span>
+            <span class="portfolio-tag">SJC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-case="belle-bruno" data-case-start="5" role="button" tabindex="0" aria-label="Abrir galeria: Belle &amp; Bruno — Detalhe">
+        <img src="Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.51.webp" alt="Reforma interior" loading="lazy">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Belle &amp; Bruno — Detalhe</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Acabamento</span>
+            <span class="portfolio-tag">Interior</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-case="ideal-lentes" data-case-start="0" role="button" tabindex="0" aria-label="Abrir galeria: Ideal Lentes">
+        <img src="Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.08 (1).webp" alt="Case Ideal Lentes" loading="lazy" onerror="this.src='Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.08.webp'">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Ideal Lentes</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Reforma Comercial</span>
+            <span class="portfolio-tag">SJC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-case="ideal-lentes" data-case-start="10" role="button" tabindex="0" aria-label="Abrir galeria: Ideal Lentes — Acabamento">
+        <img src="Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.12.webp" alt="Ideal Lentes acabamento" loading="lazy">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Ideal Lentes — Acabamento</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Revestimento</span>
+            <span class="portfolio-tag">Comercial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-case="conte-seguros" data-case-start="0" role="button" tabindex="0" aria-label="Abrir galeria: Conte Seguros — Fachada">
+        <img src="Case - FACHADA CONTE SEGUROS/WhatsApp Image 2026-01-23 at 10.10.12.webp" alt="Fachada Conte Seguros" loading="lazy" onerror="this.src='Case - FACHADA CONTE SEGUROS/WhatsApp Image 2026-01-23 at 10.04.19.webp'">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Conte Seguros — Fachada</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Fachada</span>
+            <span class="portfolio-tag">Comercial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-case="pit-onibus" data-case-start="0" role="button" tabindex="0" aria-label="Abrir galeria: Ponto de Ônibus Pit">
+        <img src="Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.57.webp" alt="Ponto de Ônibus Pit — depois da reforma" loading="lazy" onerror="this.src='Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.58.webp'">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Ponto de Ônibus Pit</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Antes &amp; Depois</span>
+            <span class="portfolio-tag">Comercial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" data-case="elide-roberto" data-case-start="0" role="button" tabindex="0" aria-label="Abrir galeria: Élide &amp; Roberto">
+        <img src="Case - ÉLIDE E ROBERTO/Elide 11.webp" alt="Case Élide e Roberto" loading="lazy" onerror="this.src='Case - ÉLIDE E ROBERTO/Elide 12.webp'">
+        <div class="portfolio-card-expand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+        <div class="portfolio-card-label">
+          <p class="portfolio-case-name">Élide &amp; Roberto</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Reforma Residencial</span>
+            <span class="portfolio-tag">SJC</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="portfolio-cta rg-fade-up">
+      <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20ver%20mais%20projetos%20da%20Rigal." target="_blank" rel="noopener" class="rg-btn rg-btn--secondary">Ver mais projetos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DEPOIMENTOS ───────────────────────────────────────── -->
+<section id="depoimentos" class="rg-section rg-section--concrete">
+  <div class="rg-container">
+    <div class="section-header centered rg-fade-up">
+      <p class="rg-kicker">Depoimentos</p>
+      <h2 class="rg-h2">Quem já reformou com a Rigal não precisa de convencimento.</h2>
+    </div>
+    <div class="testimonials-grid rg-stagger">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"A reforma da nossa cozinha e sala foi entregue dentro do prazo combinado e o acabamento superou nossas expectativas. A Gracielle acompanhou cada etapa pessoalmente."</blockquote>
+        <div class="testimonial-author">
+          <strong>Belle &amp; Bruno</strong>
+          <span>São José dos Campos · Reforma Residencial Completa</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Reformamos o nosso espaço comercial sem interromper as operações. A equipe da Rigal foi precisa no cronograma e o resultado ficou exatamente como queríamos."</blockquote>
+        <div class="testimonial-author">
+          <strong>Ideal Lentes</strong>
+          <span>São José dos Campos · Reforma Comercial</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"O orçamento foi transparente desde o início e não tivemos nenhuma surpresa financeira. O relacionamento com a Gracielle transmite segurança em cada decisão tomada."</blockquote>
+        <div class="testimonial-author">
+          <strong>Élide &amp; Roberto</strong>
+          <span>São José dos Campos · Reforma Residencial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ────────────────────────────────────────────────── -->
+<section id="faq" class="rg-section">
+  <div class="rg-container">
+    <div class="section-header centered rg-fade-up">
+      <p class="rg-kicker">Dúvidas frequentes</p>
+      <h2 class="rg-h2">Antes de começar, a gente já responde.</h2>
+    </div>
+    <div class="faq-list rg-stagger">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Quanto tempo leva para iniciar minha reforma?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Após a visita técnica e aprovação da proposta, alinhamos mobilização e cronograma com você — geralmente em menos de duas semanas. Tudo depende do escopo e do tipo de obra. Somos transparentes sobre isso desde o primeiro contato.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Posso entregar meu projeto e pedir só a execução?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Sim. Podemos entrar apenas na execução e gestão da obra sem precisar refazer o projeto. Se necessário, fazemos uma revisão técnica antes de iniciar para garantir que tudo está tecnicamente viável.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Vocês atendem só reformas residenciais?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Não. Atendemos reformas residenciais e comerciais, além de construções completas e gerenciamento de obras. A reforma residencial é nosso principal foco, mas temos capacidade técnica para projetos de maior escopo.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Como funciona o acompanhamento durante a obra?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Você recebe atualizações a cada marco de execução e tem canal direto com nossa equipe técnica durante toda a obra. Nenhum sumiço no meio do processo. Qualquer variação de escopo ou prazo é comunicada proativamente, antes de virar problema.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          A Rigal atende fora de São José dos Campos?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Atendemos São José dos Campos e a região do Vale do Paraíba. Entre em contato e verificamos a viabilidade para o seu projeto e localidade específica.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          O orçamento é gratuito?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Sim. A visita técnica e o orçamento são gratuitos. Queremos entender seu projeto antes de qualquer proposta para que o escopo, o prazo e o investimento estejam alinhados com sua realidade desde o início.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA FINAL ──────────────────────────────────────────── -->
+<section id="cta-final" class="rg-section">
+  <div class="rg-container">
+    <div class="cta-final-inner rg-fade-up">
+      <p class="rg-kicker">Próximo passo</p>
+      <h2 class="rg-h2" style="color:var(--rg-white);max-width:100%;margin-inline:auto;">Sua reforma começa com uma conversa.</h2>
+      <p class="rg-lead" style="color:rgba(255,255,255,.75);margin-inline:auto;">Fale com a equipe da Rigal agora. Conta pra gente o que você quer transformar e a gente monta um plano claro — com escopo, prazo e investimento — para você tomar a melhor decisão.</p>
+      <div class="cta-final-actions">
+        <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20de%20reforma." target="_blank" rel="noopener" class="rg-btn rg-btn--primary rg-btn--lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a href="tel:+5512996600712" class="rg-btn rg-btn--ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.45 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Solicitar ligação
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="ft-accent-bar"></div>
+  <span class="ft-ghost" aria-hidden="true">RIGAL</span>
+
+  <div class="rg-container">
+    <div class="ft-body">
+
+      <!-- col 1: brand -->
+      <div class="ft-brand">
+        <a href="#hero" class="ft-brand-logo" aria-label="Rigal Engenharia — página inicial">
+          <svg width="296" height="185" viewBox="0 0 296 185" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M267.835 184.594C268.319 184.402 268.897 184.426 269.119 184.647C269.342 184.868 268.946 185.025 268.24 184.997C267.46 184.965 267.301 184.807 267.835 184.594ZM0 151.087V118.456L1.50728 117.8C2.33628 117.439 15.3743 114.153 30.4806 110.498C87.4267 96.7195 118.162 89.2195 118.858 88.9325C119.294 88.7528 119.247 88.6151 118.74 88.5833C117.782 88.5231 117.571 50.9229 118.347 18.4716L118.788 0H120.281C121.102 0 132.283 4.89905 145.127 10.8868C199.836 36.3909 237.537 54.1368 238.318 54.7518C238.962 55.259 239.155 61.3163 239.155 80.9573V106.503H236.811H234.466V81.9549V57.4067L199.798 41.2465C180.731 32.3584 155.937 20.7636 144.699 15.4804C133.461 10.1971 123.89 5.71883 123.43 5.5286C122.765 5.25407 122.592 13.7102 122.592 46.5239C122.592 71.3417 122.839 87.8651 123.21 87.8651C123.771 87.8651 132.257 85.8494 184.988 73.1901C194.068 71.0104 202.132 69.227 202.908 69.227C204.314 69.227 204.32 69.3132 204.32 90.1948V111.163H202.311H200.301V92.5246C200.301 82.2737 200.155 73.8865 199.978 73.8865C199.8 73.8865 184.501 77.5965 165.98 82.1309C135.566 89.5772 102.521 97.5284 32.9282 114.145C19.905 117.255 8.07287 120.114 6.63455 120.499L4.01941 121.199V150.461V179.724H83.4029H162.786V181.721V183.718H81.3932H0V151.087ZM266.286 183.249C265.549 183.062 264.57 182.605 264.109 182.233C263.042 181.373 263.02 177.578 264.076 176.529C265.144 175.468 270.957 175.504 271.854 176.577C272.412 177.245 271.76 177.42 268.754 177.409L264.946 177.394L264.737 179.558C264.529 181.7 264.555 181.721 267.45 181.721C269.057 181.721 270.729 181.366 271.165 180.933C271.601 180.5 272.171 180.357 272.432 180.616C273.749 181.925 269.033 183.945 266.286 183.249ZM170.424 182.124C170.227 181.613 170.399 179.965 170.806 178.462C171.529 175.794 171.615 175.73 174.464 175.73C176.439 175.73 177.505 176.053 177.766 176.729C178.475 178.564 177.466 179.724 175.163 179.724C172.568 179.724 170.825 180.288 170.825 181.126C170.825 182.071 177.368 181.845 177.712 180.889C177.876 180.431 178.24 180.269 178.52 180.527C178.8 180.786 178.851 181.46 178.633 182.025C178.097 183.412 170.955 183.497 170.424 182.124ZM176.854 178.06C176.854 177.363 176.147 177.061 174.51 177.061C172.872 177.061 172.165 177.363 172.165 178.06C172.165 178.757 172.872 179.058 174.51 179.058C176.147 179.058 176.854 178.757 176.854 178.06ZM185.726 182.283C184.595 181.158 184.671 177.407 185.846 176.439C186.999 175.488 193.064 175.766 193.401 176.785C193.561 177.269 192.42 177.406 189.936 177.202L186.233 176.897V179.309C186.233 181.707 186.249 181.721 189.113 181.721C190.698 181.721 192.385 181.346 192.863 180.889C193.566 180.216 193.686 180.311 193.493 181.388C193.298 182.477 192.644 182.755 189.907 182.915C187.882 183.033 186.23 182.783 185.726 182.283ZM197.115 182.283C195.983 181.158 196.06 177.407 197.234 176.439C197.767 175.999 199.611 175.743 201.421 175.858L204.655 176.063V179.391V182.719L201.302 182.915C199.272 183.033 197.619 182.784 197.115 182.283ZM203.985 179.391C203.985 177.481 203.847 177.385 200.803 177.191L197.621 176.988V179.391V181.794L200.803 181.591C203.847 181.397 203.985 181.301 203.985 179.391ZM207.67 179.391C207.67 177.15 207.958 175.73 208.414 175.73C208.824 175.73 210.632 176.956 212.434 178.455L215.709 181.179V178.455C215.709 176.956 216.01 175.73 216.378 175.73C216.747 175.73 217.048 177.378 217.048 179.391C217.048 181.405 216.865 183.052 216.642 183.052C216.418 183.052 214.685 181.823 212.79 180.321L209.345 177.589L209.139 180.321C208.833 184.369 207.67 183.633 207.67 179.391ZM220.204 182.637C219.119 181.56 219.937 181.318 223.747 181.592C226.441 181.786 227.767 181.635 227.767 181.135C227.767 180.691 226.481 180.386 224.585 180.379C220.679 180.367 219.543 179.715 219.837 177.652C220.044 176.196 220.414 176.046 224.25 175.865C227.337 175.719 228.437 175.894 228.438 176.53C228.438 177.161 227.445 177.333 224.753 177.166C221.733 176.979 221.068 177.129 221.068 177.998C221.068 178.841 221.832 179.058 224.797 179.058C228.469 179.058 228.523 179.086 228.314 180.889C228.114 182.612 227.885 182.731 224.391 182.915C222.35 183.022 220.466 182.898 220.204 182.637ZM233.796 180.057C233.796 177.305 233.66 177.061 232.121 177.061C231.2 177.061 230.446 176.762 230.446 176.396C230.446 176.026 232.233 175.73 234.466 175.73C236.699 175.73 238.485 176.026 238.485 176.396C238.485 176.762 237.732 177.061 236.811 177.061C235.272 177.061 235.136 177.305 235.136 180.057C235.136 181.704 234.834 183.052 234.466 183.052C234.097 183.052 233.796 181.704 233.796 180.057ZM240.495 179.391V175.73H244.849C247.244 175.73 249.241 175.955 249.287 176.229C249.746 178.992 249.677 183.052 249.171 183.052C248.821 183.052 248.534 182.453 248.534 181.721C248.534 180.567 248.087 180.39 245.184 180.39C242.281 180.39 241.835 180.567 241.835 181.721C241.835 182.453 241.533 183.052 241.165 183.052C240.796 183.052 240.495 181.405 240.495 179.391ZM248.534 178.06C248.534 177.305 247.715 177.061 245.184 177.061C242.654 177.061 241.835 177.305 241.835 178.06C241.835 178.814 242.654 179.058 245.184 179.058C247.715 179.058 248.534 178.814 248.534 178.06ZM252.687 182.253C251.718 181.291 251.604 175.73 252.553 175.73C252.922 175.73 253.223 177.094 253.223 178.762V181.794L256.405 181.591L259.587 181.388L259.793 178.559C259.906 177.003 260.283 175.73 260.631 175.73C261.552 175.73 261.404 181.313 260.458 182.253C259.416 183.289 253.729 183.289 252.687 182.253ZM275.777 181.045C277.442 178.245 279.847 175.332 280.166 175.73C283.134 179.434 285.213 183.052 284.372 183.052C283.82 183.052 283.369 182.753 283.369 182.387C283.369 182.02 281.879 181.721 280.059 181.721C278.238 181.721 276.562 182.02 276.335 182.387C276.107 182.753 275.62 183.052 275.253 183.052C274.885 183.052 275.121 182.149 275.777 181.045ZM281.359 180.111C281.359 179.263 280.465 177.727 279.971 177.727C279.655 177.727 279.074 178.326 278.679 179.058C278.05 180.227 278.17 180.39 279.661 180.39C280.595 180.39 281.359 180.264 281.359 180.111ZM287.771 182.006C286.497 180.74 286.409 178.402 287.576 176.816C288.25 175.9 289.218 175.695 292.098 175.857L295.762 176.063L295.973 178.606C296.089 180.004 295.826 181.577 295.388 182.1C294.298 183.405 289.114 183.341 287.771 182.006ZM294.757 179.355V176.988L291.581 177.191C289.146 177.347 288.351 177.675 288.175 178.598C287.721 180.971 288.573 181.721 291.721 181.721C294.753 181.721 294.757 181.718 294.757 179.355ZM278.396 174.316C278.595 173.995 279.344 173.733 280.059 173.733C280.774 173.733 281.359 173.995 281.359 174.316C281.359 174.636 280.611 174.898 279.697 174.898C278.782 174.898 278.197 174.636 278.396 174.316ZM24.7864 160.42V151.767H34.5C43.767 151.767 44.2136 151.828 44.2136 153.098C44.2136 154.359 43.767 154.43 35.8398 154.43H27.466V156.759V159.089H34.8349C41.7573 159.089 42.2039 159.17 42.2039 160.42C42.2039 161.671 41.7573 161.752 34.8349 161.752H27.466V164.081V166.411H35.8398C43.767 166.411 44.2136 166.482 44.2136 167.742C44.2136 169.012 43.767 169.074 34.5 169.074H24.7864V160.42ZM52.2524 160.42C52.2524 152.858 52.3903 151.767 53.3467 151.767C53.9486 151.767 58.0182 154.62 62.3904 158.107L70.3398 164.448V158.107C70.3398 151.788 70.3451 151.767 72.0145 151.767H73.6893V160.42C73.6893 168.311 73.5829 169.074 72.4829 169.074C71.8194 169.074 67.7497 166.22 63.4392 162.732L55.6019 156.39V162.732C55.6019 169.053 55.5964 169.074 53.9271 169.074H52.2524V160.42ZM83.9426 167.467C82.1743 165.956 82.063 165.545 82.063 160.532C82.063 155.808 82.2475 155.007 83.6871 153.485C85.228 151.855 85.6627 151.767 92.1736 151.767C100.16 151.767 100.875 151.96 102.185 154.477C103.425 156.859 103.423 156.87 101.856 157.277C100.971 157.507 100.206 157.1 99.4958 156.023C98.5181 154.541 98.0312 154.43 92.5131 154.43C88.2261 154.43 86.3641 154.69 85.7976 155.368C85.3183 155.942 85.0912 158.076 85.2131 160.86L85.4126 165.413L92.2919 165.602C98.9268 165.786 99.1915 165.738 99.7405 164.271C100.288 162.807 100.162 162.743 96.3781 162.552C92.9933 162.381 92.4465 162.173 92.4465 161.054C92.4465 159.882 92.9335 159.755 97.3991 159.755C101.297 159.755 102.438 159.979 102.758 160.808C103.633 163.073 103.1 165.247 101.207 167.128C99.303 169.02 99.0621 169.074 92.5354 169.074C86.4047 169.074 85.6591 168.934 83.9426 167.467ZM111.204 160.42V151.767H121.252C130.854 151.767 131.301 151.826 131.301 153.098C131.301 154.359 130.854 154.43 122.927 154.43H114.553V156.759V159.089H121.922C128.845 159.089 129.291 159.17 129.291 160.42C129.291 161.671 128.845 161.752 121.922 161.752H114.553V164.081V166.411H122.927C130.854 166.411 131.301 166.482 131.301 167.742C131.301 169.015 130.854 169.074 121.252 169.074H111.204V160.42ZM139.34 160.42V151.767H140.959C141.849 151.767 142.679 152.069 142.803 152.439C142.927 152.808 146.193 155.624 150.06 158.697L157.092 164.284L157.284 158.025C157.466 152.067 157.547 151.767 158.959 151.766C160.424 151.764 160.439 151.868 160.237 160.419C160.08 167.048 159.825 169.074 159.147 169.074C158.659 169.074 154.759 166.228 150.48 162.75C146.2 159.272 142.546 156.426 142.359 156.426C142.172 156.426 142.019 159.272 142.019 162.75C142.019 168.63 141.925 169.074 140.68 169.074C139.408 169.074 139.34 168.63 139.34 160.42ZM169.485 160.42C169.485 151.89 169.507 151.767 170.993 151.766C172.401 151.765 172.485 152.005 172.27 155.427L172.041 159.089H179.472H186.903V155.428C186.903 151.967 186.994 151.767 188.578 151.767H190.252V160.42V169.074H188.516C186.829 169.074 186.785 168.968 187.008 165.412L187.238 161.75L179.701 161.75L172.165 161.752V165.413C172.165 168.63 172.003 169.074 170.825 169.074C169.554 169.074 169.485 168.63 169.485 160.42ZM202.779 160.445C206.022 155.7 209.127 151.824 209.679 151.832C210.487 151.845 220.785 166.184 221.626 168.467C221.749 168.801 221.136 169.074 220.263 169.074C219.211 169.074 218.277 168.401 217.49 167.077L216.303 165.08H209.61H202.918L201.777 167.073C200.937 168.539 200.14 169.066 198.76 169.069C196.913 169.073 196.974 168.941 202.779 160.445ZM212.141 159.128C210.971 157.319 209.864 155.826 209.679 155.812C209.495 155.797 208.362 157.277 207.162 159.101L204.98 162.417H209.624H214.268L212.141 159.128ZM229.107 160.42V151.767H238.381C250.181 151.767 249.793 151.433 249.793 161.593C249.793 168.553 249.703 169.074 248.494 169.074C247.4 169.074 247.194 168.599 247.194 166.078V163.083H239.49H231.786V166.078C231.786 168.63 231.588 169.074 230.446 169.074C229.175 169.074 229.107 168.63 229.107 160.42ZM247.065 157.258L247.271 154.43H239.529H231.786V156.981C231.786 158.385 231.997 159.742 232.254 159.998C232.512 160.253 235.903 160.378 239.791 160.275L246.859 160.087L247.065 157.258ZM258.582 160.42C258.582 151.891 258.604 151.767 260.09 151.766C261.586 151.764 261.595 151.827 261.392 160.419C261.202 168.478 261.098 169.074 259.885 169.074C258.662 169.074 258.582 168.547 258.582 160.42ZM274.427 160.42C277.929 155.195 280.651 151.781 281.296 151.803C281.895 151.824 284.277 154.793 286.718 158.562C289.113 162.259 291.63 166.136 292.311 167.178L293.549 169.074H291.826C290.588 169.074 289.809 168.51 289.063 167.077L288.024 165.08H281.387C274.779 165.08 274.745 165.088 273.32 167.077C272.401 168.36 271.306 169.074 270.257 169.074C268.742 169.074 269.039 168.456 274.427 160.42ZM285.378 162.027C285.378 161.812 284.412 160.299 283.23 158.664L281.082 155.692L279.952 157.18C279.331 157.999 278.321 159.512 277.708 160.543L276.594 162.417H280.986C283.402 162.417 285.378 162.242 285.378 162.027ZM71.6796 142.781C71.6796 142.232 71.2274 141.782 70.6747 141.782C69.8142 141.782 69.6699 139.822 69.6699 128.137V114.491H84.5114H99.353L101.863 117.113C103.547 118.872 104.524 120.624 104.833 122.438C105.322 125.315 104.744 130.241 103.853 130.788C103.558 130.969 103.722 132.243 104.217 133.621C104.711 134.998 105.129 137.847 105.145 139.952L105.175 143.779H102.495C100.56 143.779 99.8155 143.502 99.8155 142.781C99.8155 142.232 99.3633 141.782 98.8106 141.782C98.0291 141.782 97.8058 140.895 97.8058 137.788V133.795H87.0873H76.3689V138.787V143.779H74.0242C72.3867 143.779 71.6796 143.478 71.6796 142.781ZM97.6768 123.976L97.8828 121.147H87.1258H76.3689V124.16V127.172L86.9198 126.989L97.4708 126.805L97.6768 123.976ZM119.243 142.781C119.243 142.232 118.79 141.782 118.238 141.782C117.377 141.782 117.233 139.822 117.233 128.137V114.491H119.913C121.848 114.491 122.592 114.768 122.592 115.489C122.592 116.038 123.044 116.488 123.597 116.488C124.458 116.488 124.602 118.448 124.602 130.133V143.779H121.922C119.987 143.779 119.243 143.502 119.243 142.781ZM142.525 142.278C141.514 141.456 139.931 139.752 139.008 138.491C137.431 136.337 137.33 135.7 137.33 127.929V119.659L139.931 117.075L142.532 114.491H153.687C166.359 114.491 166.775 114.622 170.134 119.66C172.853 123.74 172.816 125.15 169.988 125.113C168.413 125.093 167.356 124.54 166.167 123.116L164.524 121.147H155.69C143.876 121.147 143.903 121.126 144.168 130.133L144.364 136.79L153.556 136.975C162.354 137.152 162.814 137.095 164.275 135.644L165.801 134.127L160.609 133.933C156.597 133.783 155.417 133.518 155.417 132.768C155.417 132.234 154.965 131.798 154.413 131.798C153.711 131.798 153.408 131.095 153.408 129.468V127.138H161.321H169.233L170.699 129.108C173.536 132.921 172.308 139.503 168.22 142.395C166.43 143.661 165.332 143.779 155.314 143.776C144.961 143.773 144.264 143.691 142.525 142.278ZM184.223 142.781C184.92 141.947 184.823 141.782 183.635 141.782C182.853 141.782 182.226 141.558 182.241 141.283C182.256 141.008 186.27 134.943 191.162 127.804C200.485 114.198 201.802 112.969 204.246 115.601C204.869 116.272 209.539 122.904 214.625 130.339L223.871 143.857L220.651 143.652C217.737 143.466 217.237 143.181 215.397 140.658L213.364 137.87L203.515 137.829L193.666 137.788L191.592 140.784C189.644 143.597 189.332 143.779 186.454 143.779C183.806 143.779 183.503 143.643 184.223 142.781ZM207.93 130.3C207.662 129.842 206.551 128.162 205.463 126.565L203.484 123.663L201.946 125.567C201.1 126.614 199.915 128.295 199.312 129.301L198.215 131.132H203.317C207.212 131.132 208.303 130.935 207.93 130.3ZM235.806 142.781C235.806 142.232 235.353 141.782 234.801 141.782C233.94 141.782 233.796 139.822 233.796 128.137V114.491H236.476C238.411 114.491 239.155 114.768 239.155 115.489C239.155 116.038 239.607 116.488 240.16 116.488C241.01 116.488 241.165 118.078 241.165 126.805V137.123H250.544C258.433 137.123 259.922 137.281 259.922 138.121C259.922 138.67 260.374 139.12 260.927 139.12C261.629 139.12 261.932 139.822 261.932 141.449V143.779H248.869C237.704 143.779 235.806 143.634 235.806 142.781Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <p class="ft-brand-tagline">Reformas e construções com rigor técnico, prazo cumprido e transparência total em São José dos Campos.</p>
+        <span class="ft-location-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          São José dos Campos — SP
+        </span>
+      </div>
+
+      <!-- col 2: navegação -->
+      <nav aria-label="Navegação do rodapé">
+        <p class="ft-col-label">Navegação</p>
+        <ul class="ft-nav-list">
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#processo">Como trabalhamos</a></li>
+          <li><a href="#portfolio">Projetos</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+        </ul>
+      </nav>
+
+      <!-- col 3: contato -->
+      <div>
+        <p class="ft-col-label">Contato</p>
+        <ul class="ft-contact-list">
+          <li class="ft-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.45 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+5512996600712">(12) 99660-0712</a>
+          </li>
+          <li class="ft-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:contato@rigalengenharia.com.br">contato@rigalengenharia.com.br</a>
+          </li>
+          <li class="ft-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. Cassiano Ricardo, 601<br>Jardim Aquarius, SJC — SP</span>
+          </li>
+          <li class="ft-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Seg–Sex, 08h–18h</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- col 4: CTA -->
+      <div>
+        <p class="ft-col-label">Fale conosco</p>
+        <div class="ft-cta-card">
+          <div class="ft-cta-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </div>
+          <p class="ft-cta-card-title">Orçamento gratuito</p>
+          <p class="ft-cta-card-sub">Sem compromisso. Conta pra gente o que você quer transformar.</p>
+          <a href="https://wa.me/5512996600712?text=Olá!%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20de%20reforma." target="_blank" rel="noopener" class="ft-cta-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a href="tel:+5512996600712" class="ft-cta-phone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.45 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (12) 99660-0712
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- bottom bar -->
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 Rigal Engenharia e Construção · Todos os direitos reservados.</p>
+      <div class="ft-badges">
+        <span class="ft-badge">CREA-SP</span>
+        <span class="ft-badge">São José dos Campos</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── WHATSAPP FLOAT ─────────────────────────────────────── -->
+<a href="https://wa.me/5512996600712?text=Olá!%20Vim%20pelo%20site%20da%20Rigal%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<!-- ─── PORTFOLIO MODAL ────────────────────────────────────── -->
+<div id="pmodal" class="pmodal" role="dialog" aria-modal="true" aria-label="Galeria do projeto" aria-hidden="true">
+  <div class="pmodal-backdrop" id="pmodal-backdrop"></div>
+  <div class="pmodal-box">
+    <header class="pmodal-header">
+      <h3 class="pmodal-title" id="pmodal-title"></h3>
+      <div class="pmodal-htags" id="pmodal-htags"></div>
+      <span class="pmodal-counter" id="pmodal-counter"></span>
+      <button class="pmodal-close" id="pmodal-close" aria-label="Fechar galeria">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </header>
+    <div class="pmodal-stage" id="pmodal-stage">
+      <button class="pmodal-arrow pmodal-arrow--prev" id="pmodal-prev" aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="pmodal-img-wrap">
+        <span class="pmodal-phase-badge" id="pmodal-phase-badge" aria-hidden="true"></span>
+        <img class="pmodal-main-img" id="pmodal-main-img" src="" alt="">
+      </div>
+      <button class="pmodal-arrow pmodal-arrow--next" id="pmodal-next" aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="pmodal-thumbs" id="pmodal-thumbs" role="list" aria-label="Miniaturas do projeto"></div>
+  </div>
+</div>
+
+<script>
+// ─── PRELOADER ────────────────────────────────────────────
+(function () {
+  const pre = document.getElementById('rg-preloader');
+  function dismiss() {
+    pre.classList.add('hidden');
+    document.body.classList.remove('pre-lock');
+    pre.addEventListener('transitionend', () => pre.remove(), { once: true });
+  }
+  const minDelay = 1100;
+  const start = Date.now();
+  if (document.readyState === 'complete') {
+    const elapsed = Date.now() - start;
+    setTimeout(dismiss, Math.max(0, minDelay - elapsed));
+  } else {
+    window.addEventListener('load', () => {
+      const elapsed = Date.now() - start;
+      setTimeout(dismiss, Math.max(0, minDelay - elapsed));
+    });
+  }
+})();
+
+// ─── NAV scroll ───────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ─── Mobile menu ─────────────────────────────────────────
+function toggleMenu() {
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('nav-mobile').classList.remove('open');
+}
+document.addEventListener('click', e => {
+  const menu = document.getElementById('nav-mobile');
+  if (menu.classList.contains('open') && !nav.contains(e.target)) closeMenu();
+});
+
+// ─── Hero BG fallback ─────────────────────────────────────
+const heroBgFallbacks = [
+  'Case - BELLE E BRUNO/WhatsApp Image 2026-01-23 at 10.34.56.webp',
+  'Case - ÉLIDE E ROBERTO/Elide 12.webp',
+  'Case - IDEAL LENTES/WhatsApp Image 2026-01-23 at 10.03.08.webp',
+];
+let heroBgIdx = 0;
+function tryNextHeroBg(img) {
+  heroBgIdx++;
+  if (heroBgIdx < heroBgFallbacks.length) {
+    img.src = heroBgFallbacks[heroBgIdx];
+  }
+}
+
+// ─── FAQ accordion ────────────────────────────────────────
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-answer').style.maxHeight = '0';
+  });
+
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// ─── Animation system ────────────────────────────────────
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Selectors a observar com IntersectionObserver
+const animSelectors = [
+  '.rg-fade-up', '.rg-fade-left', '.rg-fade-right',
+  '.rg-scale-in', '.rg-stagger', '.rg-rule-animate', '.rg-clip-up'
+].join(',');
+
+const scrollIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      scrollIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -56px 0px' });
+
+document.querySelectorAll(animSelectors).forEach(el => {
+  // Elementos do hero NÃO são observados — têm entrada própria
+  if (el.closest('#hero')) return;
+  scrollIO.observe(el);
+});
+
+// ── Hero entrance: stagger imediato no carregamento ──
+(function heroEntrance() {
+  if (prefersReduced) {
+    document.querySelectorAll('#hero [data-hero]').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const heroEls = [...document.querySelectorAll('#hero [data-hero]')]
+    .sort((a, b) => +a.dataset.hero - +b.dataset.hero);
+
+  // Início após um frame para garantir que CSS foi aplicado
+  requestAnimationFrame(() => {
+    heroEls.forEach((el, i) => {
+      const delay = 80 + i * 130;
+      setTimeout(() => el.classList.add('visible'), delay);
+    });
+
+    // Badges: escalonados após o portrait, flutuação em fases distintas
+    const badges = document.querySelectorAll('.hero-fbadge');
+    const badgeDelays = [820, 1060, 1300];
+    const badgeDurs  = ['4s', '3.6s', '4.4s'];
+    const floatPhases = ['0s', '-1.2s', '-2.8s']; // phase offset para flutuação não sincronizada
+    badges.forEach((b, i) => {
+      b.style.setProperty('--badge-dur', badgeDurs[i]);
+      b.style.setProperty('--badge-delay', floatPhases[i]);
+      setTimeout(() => b.classList.add('badge-in'), badgeDelays[i]);
+    });
+  });
+})();
+
+// ── Parallax no hero background ──
+if (!prefersReduced) {
+  const heroSection = document.getElementById('hero');
+  const heroBg = document.querySelector('.hero-bg-img');
+  if (heroSection && heroBg) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < heroSection.offsetHeight * 1.2) {
+        heroBg.style.transform = `translateY(${scrolled * 0.28}px)`;
+      }
+    }, { passive: true });
+  }
+}
+
+// ── Counter animation para números em .rg-countup ──
+function animateCount(el) {
+  const target = parseFloat(el.dataset.target || el.textContent);
+  const suffix = el.dataset.suffix || el.textContent.replace(/[\d.]/g, '');
+  const duration = 1400;
+  const start = performance.now();
+  const update = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(eased * target);
+    el.textContent = current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+if (!prefersReduced) {
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target);
+        counterIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.rg-countup').forEach(el => {
+    el.dataset.target = parseFloat(el.textContent);
+    counterIO.observe(el);
+  });
+}
+
+// ─── Portfolio Modal ──────────────────────────────────────
+(function () {
+  const BASE = {
+    'belle-bruno': {
+      name: 'Belle & Bruno',
+      tags: ['Reforma Residencial', 'SJC'],
+      folder: 'Case - BELLE E BRUNO',
+      images: [
+        'WhatsApp Image 2026-01-23 at 10.34.56.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.46.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.46 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.47.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.47 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.51.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.51 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.52.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.52 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.53.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.53 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.55.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.56 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.56 (2).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.56 (3).webp',
+        'WhatsApp Image 2026-01-23 at 10.34.57.webp',
+        'WhatsApp Image 2026-01-23 at 10.34.57 (1).webp',
+      ]
+    },
+    'ideal-lentes': {
+      name: 'Ideal Lentes',
+      tags: ['Reforma Comercial', 'SJC'],
+      folder: 'Case - IDEAL LENTES',
+      images: [
+        'WhatsApp Image 2026-01-23 at 10.03.08 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.08.webp',
+        'WhatsApp Image 2026-01-23 at 10.03.08 (2).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.08 (3).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.09.webp',
+        'WhatsApp Image 2026-01-23 at 10.03.09 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.09 (2).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.10.webp',
+        'WhatsApp Image 2026-01-23 at 10.03.10 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.11.webp',
+        'WhatsApp Image 2026-01-23 at 10.03.12.webp',
+        'WhatsApp Image 2026-01-23 at 10.03.12 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.12 (2).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.13.webp',
+        'WhatsApp Image 2026-01-23 at 10.03.13 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.03.14.webp',
+      ]
+    },
+    'conte-seguros': {
+      name: 'Conte Seguros — Fachada',
+      tags: ['Fachada', 'Comercial'],
+      folder: 'Case - FACHADA CONTE SEGUROS',
+      images: [
+        'WhatsApp Image 2026-01-23 at 10.10.12.webp',
+        'WhatsApp Image 2026-01-23 at 10.04.19.webp',
+        'WhatsApp Image 2026-01-23 at 10.10.12 (1).webp',
+        'WhatsApp Image 2026-01-23 at 10.10.13.webp',
+        'WhatsApp Image 2026-01-23 at 10.12.14.webp',
+      ]
+    },
+    'elide-roberto': {
+      name: 'Élide & Roberto',
+      tags: ['Reforma Residencial', 'SJC'],
+      folder: 'Case - ÉLIDE E ROBERTO',
+      images: [
+        'Elide 11.webp',
+        'Élide 2.webp',
+        'Obra Élide.webp',
+        'Obra Élide 3.webp',
+        'Obra Elide 4.webp',
+        'Obr élide 5.webp',
+        'Elide 6.webp',
+        'Elide 7.webp',
+        'Elide 8.webp',
+        'Elide 9.webp',
+        'Elide 10.webp',
+        'Elide 12.webp',
+        'Elide 13.webp',
+        'Elide 14.webp',
+        'Elide 15.webp',
+        'Elide 16.webp',
+        '20230802_112727.webp',
+        '20230802_112730.webp',
+      ]
+    },
+    'pit-onibus': {
+      name: 'Ponto de Ônibus Pit',
+      tags: ['Antes & Depois', 'Comercial'],
+      items: [
+        { src: 'Case - Ponto de Onibus Pit/Antes/WhatsApp Image 2026-04-22 at 12.05.54.webp',        label: 'Antes' },
+        { src: 'Case - Ponto de Onibus Pit/Antes/WhatsApp Image 2026-04-22 at 12.05.55 (1).webp',    label: 'Antes' },
+        { src: 'Case - Ponto de Onibus Pit/Antes/WhatsApp Image 2026-04-22 at 12.05.55 (2).webp',    label: 'Antes' },
+        { src: 'Case - Ponto de Onibus Pit/Antes/WhatsApp Image 2026-04-22 at 12.05.55.webp',        label: 'Antes' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.57 (1).webp',   label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.57 (2).webp',   label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.57.webp',       label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.58 (2).webp',   label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.58.webp',       label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.59 (2).webp',   label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.05.59.webp',       label: 'Depois' },
+        { src: 'Case - Ponto de Onibus Pit/Depois/WhatsApp Image 2026-04-22 at 12.06.01 (2).webp',   label: 'Depois' },
+      ]
+    }
+  };
+
+  const modal     = document.getElementById('pmodal');
+  const backdrop  = document.getElementById('pmodal-backdrop');
+  const titleEl   = document.getElementById('pmodal-title');
+  const tagsEl    = document.getElementById('pmodal-htags');
+  const counter   = document.getElementById('pmodal-counter');
+  const closeBtn  = document.getElementById('pmodal-close');
+  const prevBtn   = document.getElementById('pmodal-prev');
+  const nextBtn   = document.getElementById('pmodal-next');
+  const mainImg   = document.getElementById('pmodal-main-img');
+  const thumbs    = document.getElementById('pmodal-thumbs');
+  const phaseBadge = document.getElementById('pmodal-phase-badge');
+
+  let caseKey = null;
+  let idx = 0;
+
+  function caseLen(key) {
+    const c = BASE[key];
+    return c.items ? c.items.length : c.images.length;
+  }
+
+  function caseSrc(key, i) {
+    const c = BASE[key];
+    return c.items ? c.items[i].src : (c.folder + '/' + c.images[i]);
+  }
+
+  function caseLabel(key, i) {
+    const c = BASE[key];
+    return c.items ? c.items[i].label : null;
+  }
+
+  function goTo(i) {
+    const len = caseLen(caseKey);
+    idx = ((i % len) + len) % len;
+    mainImg.classList.remove('img-loaded');
+    mainImg.src = caseSrc(caseKey, idx);
+    mainImg.alt = BASE[caseKey].name + ' — foto ' + (idx + 1);
+    mainImg.onload = () => mainImg.classList.add('img-loaded');
+    counter.textContent = (idx + 1) + ' / ' + len;
+    thumbs.querySelectorAll('.pmodal-thumb').forEach((t, ti) => {
+      t.classList.toggle('pthumb-active', ti === idx);
+    });
+    const active = thumbs.children[idx];
+    if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    const lbl = caseLabel(caseKey, idx);
+    phaseBadge.className = 'pmodal-phase-badge';
+    if (lbl) {
+      phaseBadge.textContent = lbl;
+      phaseBadge.classList.add('badge--' + lbl.toLowerCase(), 'badge--visible');
+    }
+  }
+
+  function openModal(key, start) {
+    caseKey = key;
+    const c = BASE[key];
+    const len = caseLen(key);
+    titleEl.textContent = c.name;
+    tagsEl.innerHTML = c.tags.map(t => '<span class="pmodal-htag">' + t + '</span>').join('');
+    thumbs.innerHTML = Array.from({ length: len }, (_, i) => {
+      const lbl = caseLabel(key, i);
+      const dotClass = lbl ? ' pthumb-dot pthumb-dot--' + lbl.toLowerCase() : '';
+      return '<div class="pmodal-thumb" role="listitem" data-i="' + i + '" tabindex="0" aria-label="' + (lbl || 'Foto') + ' ' + (i + 1) + '">' +
+        '<img src="' + caseSrc(key, i) + '" alt="" loading="lazy">' +
+        (lbl ? '<span class="pthumb-dot pthumb-dot--' + lbl.toLowerCase() + '" title="' + lbl + '"></span>' : '') +
+        '</div>';
+    }).join('');
+    thumbs.querySelectorAll('.pmodal-thumb').forEach(th => {
+      th.addEventListener('click', () => goTo(+th.dataset.i));
+      th.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') goTo(+th.dataset.i); });
+    });
+    const multi = len > 1;
+    prevBtn.style.display = multi ? '' : 'none';
+    nextBtn.style.display = multi ? '' : 'none';
+    modal.removeAttribute('aria-hidden');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    goTo(start || 0);
+    setTimeout(() => closeBtn.focus(), 60);
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => { mainImg.src = ''; mainImg.classList.remove('img-loaded'); }, 300);
+    caseKey = null;
+  }
+
+  document.querySelectorAll('.portfolio-card[data-case]').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.case, +card.dataset.caseStart || 0));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.case, +card.dataset.caseStart || 0); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  prevBtn.addEventListener('click', () => goTo(idx - 1));
+  nextBtn.addEventListener('click', () => goTo(idx + 1));
+
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') goTo(idx - 1);
+    if (e.key === 'ArrowRight') goTo(idx + 1);
+  });
+
+  let tx = 0, ty = 0;
+  document.getElementById('pmodal-stage').addEventListener('touchstart', e => {
+    tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+  }, { passive: true });
+  document.getElementById('pmodal-stage').addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    const dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) dx < 0 ? goTo(idx + 1) : goTo(idx - 1);
+  }, { passive: true });
+})();
+
+// ─── Smooth anchor offset for fixed nav ──────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = 80;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+  });
+});
+</script>
+
+<!-- ─── Dados Estruturados (Schema.org / JSON-LD) ───────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "GeneralContractor"],
+      "@id": "https://www.rigalengenharia.com.br/#business",
+      "name": "Rigal Engenharia",
+      "alternateName": "Rigal",
+      "description": "Empresa especializada em reforma residencial e comercial com rigor técnico, planejamento e acabamento de alto padrão em São José dos Campos e região do Vale do Paraíba.",
+      "url": "https://www.rigalengenharia.com.br/",
+      "telephone": "+55-12-99660-0712",
+      "email": "contato@rigalengenharia.com.br",
+      "image": "https://www.rigalengenharia.com.br/og-image.jpg",
+      "priceRange": "$$",
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "Dinheiro, PIX, Transferência bancária",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Cassiano Ricardo, 601",
+        "addressLocality": "São José dos Campos",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.1794,
+        "longitude": -45.8869
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "São José dos Campos",
+          "sameAs": "https://www.wikidata.org/wiki/Q492789"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vale do Paraíba"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Reforma e Construção",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reforma Residencial",
+              "description": "Reforma completa de residências com planejamento técnico, gestão de cronograma e acabamento de alto padrão."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reforma Comercial",
+              "description": "Reforma de espaços comerciais com mínima interrupção das operações e cumprimento de prazos."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Construção Completa",
+              "description": "Construção de imóveis residenciais e comerciais do zero, com acompanhamento técnico integral."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gerenciamento de Obra",
+              "description": "Gestão e fiscalização técnica de obras com relatórios de andamento e comunicação direta."
+            }
+          }
+        ]
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Gracielle Galdino",
+        "jobTitle": "Engenheira Civil",
+        "description": "Engenheira Civil com mais de 12 anos de experiência em obras residenciais e comerciais na região de São José dos Campos e fundadora da Rigal Engenharia.",
+        "worksFor": {
+          "@id": "https://www.rigalengenharia.com.br/#business"
+        }
+      },
+      "sameAs": [
+        "https://wa.me/5512996600712"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.rigalengenharia.com.br/#website",
+      "url": "https://www.rigalengenharia.com.br/",
+      "name": "Rigal Engenharia",
+      "description": "Reforma residencial e comercial em São José dos Campos — rigor técnico, prazo cumprido e acabamento de alto padrão.",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://www.rigalengenharia.com.br/#business"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.rigalengenharia.com.br/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para iniciar minha reforma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Após a visita técnica e aprovação da proposta, alinhamos mobilização e cronograma com você — geralmente em menos de duas semanas. Tudo depende do escopo e do tipo de obra. Somos transparentes sobre isso desde o primeiro contato."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso entregar meu projeto e pedir só a execução?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Podemos entrar apenas na execução e gestão da obra sem precisar refazer o projeto. Se necessário, fazemos uma revisão técnica antes de iniciar para garantir que tudo está tecnicamente viável."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem só reformas residenciais?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Atendemos reformas residenciais e comerciais, além de construções completas e gerenciamento de obras. A reforma residencial é nosso principal foco, mas temos capacidade técnica para projetos de maior escopo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o acompanhamento durante a obra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você recebe atualizações a cada marco de execução e tem canal direto com nossa equipe técnica durante toda a obra. Qualquer variação de escopo ou prazo é comunicada proativamente, antes de virar problema."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Rigal atende fora de São José dos Campos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendemos São José dos Campos e a região do Vale do Paraíba. Entre em contato e verificamos a viabilidade para o seu projeto e localidade específica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O orçamento é gratuito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A visita técnica e o orçamento são gratuitos. Queremos entender seu projeto antes de qualquer proposta para que o escopo, o prazo e o investimento estejam alinhados com sua realidade desde o início."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
