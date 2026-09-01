@@ -2380,7 +2380,22 @@ footer {
   .hero-portrait { max-height: 24vh; }
   .hero-portrait-frame { max-height: 24vh; }
   .hero-portrait-img { height: 24vh; }
-  .diff-grid { grid-template-columns: 1fr; }
+  .diff-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    margin-inline: -1rem;
+    padding: 0 1rem .5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .diff-grid::-webkit-scrollbar { display: none; }
+  .diff-grid .rg-card {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
   .founder-accent { display: none; }
   .founder-credential { display: none; }
 }
